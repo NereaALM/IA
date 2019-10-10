@@ -15,18 +15,18 @@ public class PendingList {
         return pendingList.isEmpty();
     }
 
-    public State getState()
+    public State getState( int index )
     {
-        int index = 0;
-        State State;
-
-        State = pendingList.get( index );
-
-        return State;
+        return pendingList.get( index );
     }
 
     public void addState( State State )
     {
         pendingList.add( State );
+    }
+
+    public boolean containsValue( State state )
+    {
+        return pendingList.contains( state );
     }
 }

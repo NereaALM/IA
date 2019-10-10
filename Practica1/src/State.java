@@ -2,7 +2,7 @@ import java.util.List;
 
 public class State
 {
-    String id;
+    int id;
     int posX;
     int posY;
     List < State > successorList;

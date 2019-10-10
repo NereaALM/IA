@@ -19,7 +19,7 @@ public class SearchingAlgorithm
 
         while ( !found && !pendingList.isEmpty() )
         {
-            currentState = pendingList.getState();
+            currentState = pendingList.getState(0);
             
             if( currentState.equals( finalState ) )
             {
@@ -29,13 +29,14 @@ public class SearchingAlgorithm
             {
                 for ( State state : currentState.successorList )
                 {
+                    // La segona condicio es opcional i depen del cas.
                     if( !treatedMap.containsValue( state ) && !pendingList.containsValue( state ) )
                     {
                         pendingList.addState( state );
                     }
                 }
 
-                treatedMap.put( treatedMap.hashCode(), currentState );
+                treatedMap.put( currentState.id, currentState );
             }
         }
 

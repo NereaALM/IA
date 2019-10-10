@@ -1,29 +1,47 @@
 import java.io.BufferedReader;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
-import java.lang.reflect.Array;
+import java.io.IOException;
+import java.util.StringTokenizer;
 
 public class Main
 {
     public static void main( String[] args )
     {
-        SearchingAlgorithm searchingAlgorithm = new SearchingAlgorithm();
+        // LLegir mapa de fitxer.
+        final int size = 10;
+        int[][] map = new int[size][size];
 
-        /*
-        String fileName = "Map";
-        FileReader fileReader = new FileReader( fileName );
-        BufferedReader bufferedReader = new BufferedReader( fileReader );
-        */
+        try
+        {
+            String fileDir = "Map.txt";
+            FileReader fileReader = new FileReader( fileDir );
+            BufferedReader bufferedReader = new BufferedReader( fileReader );
+            StringTokenizer st = new StringTokenizer( " " );
 
-        // Llegir fitxer amb mapa.
+            String line = bufferedReader.readLine();
 
+            while ( line != null )
+            {
+                System.out.println( line );
+                line = bufferedReader.readLine();
+            }
+
+        }
+        catch ( FileNotFoundException e )
+        {
+            e.printStackTrace();
+        }
+        catch ( IOException e )
+        {
+            e.printStackTrace();
+        }
 
         // Llegir estat inicial i estat final.
         // Escollir A* o BF.
-
         // Fer cerca.
-        //searchingAlgorithm.Search();
 
         // Mostrar resultats.
-        System.out.println("Mi primera práctica de IA! ^^");
+        System.out.println( "Mi primera práctica de IA! ^^" );
     }
 }
