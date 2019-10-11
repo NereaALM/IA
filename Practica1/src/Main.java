@@ -2,45 +2,53 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.StringTokenizer;
+import java.util.Scanner;
 
 public class Main
 {
     public static void main( String[] args )
     {
-        // LLegir mapa de fitxer.
         final int size = 10;
         int[][] map = new int[size][size];
 
+        String fileDir;
+        FileReader fileReader;
+        BufferedReader bufferedReader;
+        Scanner scanner;
+        String[] line;
+
+        // LLegir mapa de fitxer.
         try
         {
-            String fileDir = "Map.txt";
-            FileReader fileReader = new FileReader( fileDir );
-            BufferedReader bufferedReader = new BufferedReader( fileReader );
-            StringTokenizer st = new StringTokenizer( " " );
+            fileDir = "Map.txt";
+            fileReader = new FileReader( fileDir );
+            bufferedReader = new BufferedReader( fileReader );
+            scanner = new Scanner( bufferedReader );
 
-            String line = bufferedReader.readLine();
-
-            while ( line != null )
+            while ( scanner.hasNextLine() )
             {
-                System.out.println( line );
-                line = bufferedReader.readLine();
-            }
+                for( int r = 0; r < size; r++ )
+                {
+                    line = scanner.nextLine().trim().split( " " );
+                    for( int c = 0; c < size; c++ )
+                    {
+                        map[r][c] = Integer.parseInt( line[c] );
 
+                        System.out.print( map[r][c] );
+                    }
+                    System.out.println();
+                }
+            }
         }
         catch ( FileNotFoundException e )
         {
             e.printStackTrace();
         }
-        catch ( IOException e )
-        {
-            e.printStackTrace();
-        }
+
 
         // Llegir estat inicial i estat final.
         // Escollir A* o BF.
         // Fer cerca.
-
         // Mostrar resultats.
         System.out.println( "Mi primera práctica de IA! ^^" );
     }
