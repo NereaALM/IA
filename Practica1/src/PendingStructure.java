@@ -1,13 +1,12 @@
 import java.util.List;
 
-public class PendingList {
+public class PendingStructure {
 
     List< State > pendingList;
 
 
-    public PendingList()
+    public PendingStructure()
     {
-
     }
 
     public boolean isEmpty()

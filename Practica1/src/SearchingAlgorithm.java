@@ -2,24 +2,29 @@ import java.util.HashMap;
 
 public class SearchingAlgorithm
 {
+    PendingStructure pendingStates;
+    HashMap < Integer, State > treatedStates;
+
+
     public SearchingAlgorithm()
     {
-
+        pendingStates = new PendingStructure();
+        treatedStates = new HashMap<>();
     }
 
     public boolean Search( State iniState, State finalState )
     {
         boolean found;
         State currentState;
-        PendingList pendingList = new PendingList();
-        HashMap < Integer, State > treatedMap = new HashMap<>();
 
-        pendingList.addState( iniState );
+
+        pendingStates.addState( iniState );
         found = false;
 
-        while ( !found && !pendingList.isEmpty() )
+        while ( !found && !pendingStates.isEmpty() )
         {
-            currentState = pendingList.getState(0);
+            // Aquest metode dependrà de l'algorisme.
+            currentState = pendingStates.getState(0);
             
             if( currentState.equals( finalState ) )
             {
@@ -27,16 +32,17 @@ public class SearchingAlgorithm
             }
             else
             {
-                for ( State state : currentState.successorList )
+                for ( State state : currentState.getSuccessorStates() )
                 {
-                    // La segona condicio es opcional i depen del cas.
-                    if( !treatedMap.containsValue( state ) && !pendingList.containsValue( state ) )
+                    // Aquesta condició dependrà de l'algorisme.
+                    if( !treatedStates.containsValue( state ) && !pendingStates.containsValue( state ) )
                     {
-                        pendingList.addState( state );
+                        // Aquest metode dependrà de l'algorisme.
+                        pendingStates.addState( state );
                     }
                 }
 
-                treatedMap.put( currentState.id, currentState );
+                treatedStates.put( currentState.getId(), currentState );
             }
         }
 
