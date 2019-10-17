@@ -1,4 +1,3 @@
-public class Heuristic
-{
+public class Heuristic {
 
 }

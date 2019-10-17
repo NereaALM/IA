@@ -3,12 +3,12 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.Scanner;
 
-public class Main
-{
-    public static void main( String[] args )
-    {
+public class Main {
+
+    public static void main( String[] args ) {
+
         final int mapSize = 10;
-        int[][] map;
+        int[][] map = new int[ mapSize ][ mapSize ];
 
         String fileDir;
         FileReader fileReader;
@@ -18,31 +18,29 @@ public class Main
 
 
         System.out.println( "Mi primera práctica de IA! ^^" );
-        map = new int[ mapSize ][ mapSize ];
 
-        try
-        {
+        try {
+
             fileDir = "Map.txt";
             fileReader = new FileReader( fileDir );
             bufferedReader = new BufferedReader( fileReader );
             scanner = new Scanner( bufferedReader );
 
-            while ( scanner.hasNextLine() )
-            {
-                for( int r = 0; r < mapSize; r++ )
-                {
+            while ( scanner.hasNextLine() ) {
+
+                for( int r = 0; r < mapSize; r++ ) {
+
                     line = scanner.nextLine().trim().split( " " );
-                    for( int c = 0; c < mapSize; c++ )
-                    {
-                        map[r][c] = Integer.parseInt( line[c] );
-                        System.out.print( map[r][c] );
+                    for( int c = 0; c < mapSize; c++ ) {
+
+                        map[ r ][ c ] = Integer.parseInt( line[ c ] );
+                        System.out.print( map[ r ][ c ] );
                     }
                     System.out.println();
                 }
             }
         }
-        catch ( FileNotFoundException e )
-        {
+        catch ( FileNotFoundException e ) {
             e.printStackTrace();
         }
     }

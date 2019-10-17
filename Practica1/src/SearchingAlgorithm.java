@@ -2,39 +2,40 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class SearchingAlgorithm
-{
+public class SearchingAlgorithm {
+
     public SearchingAlgorithm() {}
 
-    public boolean Search( State iniState, State finalState )
-    {
-        List < State > pendingList;
-        HashMap < Integer, State > treatedMap;
+    public int Search( State iniState, State finalState ) {
+
+        List < State > pendingList = new ArrayList<>();
+        HashMap < Integer, State > treatedMap = new HashMap<>();
         State currentState;
-        boolean found;
+        int way = 0;
+        int heuristic;
+        boolean found = false;
 
-        pendingList = new ArrayList<>();
-        treatedMap = new HashMap<>();
+
         pendingList.add( iniState );
-        found = false;
 
-        while ( !found && !pendingList.isEmpty() )
-        {
+        while ( !found && !pendingList.isEmpty() ) {
+
             currentState = pendingList.get( 0 );
             
             if( currentState.equals( finalState ) )
                 found = true;
 
-            else
-            {
+            else {
                 for ( State state : currentState.getSuccessorList() )
-                {
                     if( !treatedMap.containsValue( state ) && !pendingList.contains( state ) )
                         pendingList.add( state );
-                }
+
                 treatedMap.put( currentState.hashCode(), currentState );
             }
         }
-        return found;
+
+        if( !found ) way = -1;
+
+        return way;
     }
 }
