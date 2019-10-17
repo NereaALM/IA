@@ -3,15 +3,12 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.Scanner;
 
-
 public class Main
 {
     public static void main( String[] args )
     {
         final int mapSize = 10;
         int[][] map;
-        State iniState;
-        State finalState;
 
         String fileDir;
         FileReader fileReader;
@@ -20,6 +17,7 @@ public class Main
         String[] line;
 
 
+        System.out.println( "Mi primera práctica de IA! ^^" );
         map = new int[ mapSize ][ mapSize ];
 
         try
@@ -47,7 +45,5 @@ public class Main
         {
             e.printStackTrace();
         }
-
-        System.out.println( "Mi primera práctica de IA! ^^" );
     }
 }

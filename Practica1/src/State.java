@@ -1,62 +1,28 @@
-import java.util.LinkedList;
+import java.util.ArrayList;
 import java.util.List;
 
 public class State
 {
-    private int id;
-    private int posR;
-    private int posC;
+    private int row;
+    private int column;
     private int roadType;
-    private List< State > successorStates;
+    private List< State > successorList;
 
-
-    public State( int posR, int posC, int roadType, int size )
+    public State( int r, int c, int roadT )
     {
-        this.posR = posR;
-        this.posC = posC;
-        this.roadType = roadType;
-        setId( size );
-        successorStates = new LinkedList<>();
-        fillSuccessorList();
+        row = r;
+        column = c;
+        roadType = roadT;
+        successorList = new ArrayList< State >();
     }
 
-    private void setId( int size )
+    public int getId ( int size )
     {
-        id = size * posC + posR;
+        return size * row + column;
     }
 
-    private void fillSuccessorList()
+    public List< State > getSuccessorList()
     {
-        int up;
-        int down;
-        int left;
-        int right;
-
-        // TO DO:
+        return successorList;
     }
-
-    // Getters:
-
-    public int getId() {
-        return id;
-    }
-
-    public int getPosR()
-    {
-        return posR;
-    }
-
-    public int getPosC()
-    {
-        return posC;
-    }
-
-    public int getRoadType() {
-        return roadType;
-    }
-
-    public List< State > getSuccessorStates() {
-        return successorStates;
-    }
-
 }
