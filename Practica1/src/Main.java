@@ -39,6 +39,9 @@ public class Main {
                     System.out.println();
                 }
             }
+
+            // TO DO: test the algorithm.
+
         }
         catch ( FileNotFoundException e ) {
             e.printStackTrace();

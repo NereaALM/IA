@@ -2,40 +2,54 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class SearchingAlgorithm {
+public abstract class SearchingAlgorithm {
 
-    public SearchingAlgorithm() {}
+    protected List < Node > pendingList;
+    protected HashMap < Integer, State > treatedMap;
+    protected Heuristic heuristic;
 
-    public int Search( State iniState, State finalState ) {
+    public SearchingAlgorithm() {
 
-        List < State > pendingList = new ArrayList<>();
-        HashMap < Integer, State > treatedMap = new HashMap<>();
-        State currentState;
-        int way = 0;
-        int heuristic;
+        pendingList = new ArrayList<>();
+        treatedMap = new HashMap<>();
+        heuristic = new Heuristic();
+    }
+
+    public List< Node > Search( State iniState, State finalState ) {
+
+        List < Node > way = new ArrayList<>();
+        Node currentNode = new Node( iniState, way, getFuncValue() );
         boolean found = false;
 
 
-        pendingList.add( iniState );
+        addNode( currentNode );
 
         while ( !found && !pendingList.isEmpty() ) {
 
-            currentState = pendingList.get( 0 );
-            
-            if( currentState.equals( finalState ) )
+            currentNode = getNode();
+
+            if( currentNode.getState().equals( finalState ) )
                 found = true;
 
             else {
-                for ( State state : currentState.getSuccessorList() )
-                    if( !treatedMap.containsValue( state ) && !pendingList.contains( state ) )
-                        pendingList.add( state );
 
-                treatedMap.put( currentState.hashCode(), currentState );
+                for ( Node node : currentNode.getSuccessorList() )
+                    if( !treatedMap.containsValue( node.getState() ) )
+                        addNode( node );
+                treatedMap.put( currentNode.getState().hashCode(), currentNode.getState() );
             }
         }
 
-        if( !found ) way = -1;
+        way = currentNode.getWay();
+        if( !found ) way = null;
 
         return way;
     }
+
+    public abstract void addNode( Node node );
+
+    public abstract Node getNode();
+
+    public abstract int getFuncValue();
+
 }

@@ -2,6 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="55477582-f657-46d9-9201-3d2f545dc0d9" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/AStar.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/BestFirst.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Node.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Heuristic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Heuristic.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
@@ -83,6 +86,9 @@
       <workItem from="1570782372406" duration="13808000" />
       <workItem from="1571315266655" duration="3984000" />
       <workItem from="1571331146572" duration="8746000" />
+      <workItem from="1571398487551" duration="694000" />
+      <workItem from="1571492707834" duration="12695000" />
+      <workItem from="1571509559726" duration="6034000" />
     </task>
     <servers />
   </component>

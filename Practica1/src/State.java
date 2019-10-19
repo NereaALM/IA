@@ -1,20 +1,38 @@
-import java.util.ArrayList;
-import java.util.List;
 
 public class State {
+
     private int row;
     private int column;
     private int roadType;
-    private List< State > successorList;
 
     public State( int r, int c, int roadT ) {
+
         row = r;
         column = c;
         roadType = roadT;
-        successorList = new ArrayList< State >();
     }
 
-    public List< State > getSuccessorList() {
-        return successorList;
+    public int getRoadType() {
+        return roadType;
+    }
+
+    public void setRoadType( int roadType ) {
+        this.roadType = roadType;
+    }
+
+    public int getRow() {
+        return row;
+    }
+
+    public void setRow( int row ) {
+        this.row = row;
+    }
+
+    public int getColumn() {
+        return column;
+    }
+
+    public void setColumn( int column ) {
+        this.column = column;
     }
 }
