@@ -25,6 +25,11 @@ public class AStar extends SearchingAlgorithm {
     }
 
     public int getFuncValue() {
-        return g + heuristic.heuristicA();
+        int f;
+
+        g =
+        f = g + heuristic.heuristicA();
+
+        return f;
     }
 }

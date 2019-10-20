@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="55477582-f657-46d9-9201-3d2f545dc0d9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/AStar.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/BestFirst.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Node.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Heuristic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Heuristic.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SearchingAlgorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SearchingAlgorithm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/State.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/State.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AStar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AStar.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -88,7 +82,7 @@
       <workItem from="1571331146572" duration="8746000" />
       <workItem from="1571398487551" duration="694000" />
       <workItem from="1571492707834" duration="12695000" />
-      <workItem from="1571509559726" duration="6034000" />
+      <workItem from="1571509559726" duration="6978000" />
     </task>
     <servers />
   </component>
