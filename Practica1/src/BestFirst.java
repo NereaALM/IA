@@ -4,7 +4,7 @@ public class BestFirst extends SearchingAlgorithm {
 
     public BestFirst() {}
 
-    public void addNode( Node node ) {
+    public void addPending(Node node ) {
 
         // The BF objective is being fast finding a way so repeated nodes are ignored.
         // !pendingList.contains( node.getState ) )
@@ -21,7 +21,7 @@ public class BestFirst extends SearchingAlgorithm {
         }
     }
 
-    public Node getNode() {
+    public Node getPending() {
 
         int pos = 0;
         Node node = pendingList.get( pos );

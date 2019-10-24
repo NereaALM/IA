@@ -4,52 +4,87 @@ import java.util.List;
 
 public abstract class SearchingAlgorithm {
 
+    protected Heuristic heuristic;
     protected List < Node > pendingList;
     protected HashMap < Integer, State > treatedMap;
-    protected Heuristic heuristic;
+    protected List < Node > way;
 
     public SearchingAlgorithm() {
 
+        heuristic = new Heuristic();
         pendingList = new ArrayList<>();
         treatedMap = new HashMap<>();
-        heuristic = new Heuristic();
+        way = new ArrayList<>();
     }
+
 
     public List< Node > Search( State iniState, State finalState ) {
 
-        List < Node > way = new ArrayList<>();
-        Node currentNode = new Node( iniState, way, getFuncValue() );
+        Node previousNode = null;
+        Node currentNode = new Node( iniState, previousNode, getFuncValue() );
         boolean found = false;
 
 
-        addNode( currentNode );
+        addPending( currentNode );
 
         while ( !found && !pendingList.isEmpty() ) {
 
-            currentNode = getNode();
+            currentNode = getPending();
 
             if( currentNode.getState().equals( finalState ) )
                 found = true;
 
             else {
 
-                for ( Node node : currentNode.getSuccessorList() )
-                    if( !treatedMap.containsValue( node.getState() ) )
-                        addNode( node );
+                for ( State state : currentNode.getState().getSuccessorList() )
+                    if( !treatedMap.containsValue( state ) ) {
+
+                        Node newNode = new Node( state, currentNode, getFuncValue() );
+                        addPending( newNode );
+                    }
+
                 treatedMap.put( currentNode.getState().hashCode(), currentNode.getState() );
             }
         }
 
-        way = currentNode.getWay();
+        // TO DO:
+
         if( !found ) way = null;
+
+        else {
+
+            Node node = currentNode;
+
+            while( node != null ) {
+
+                way.add( currentNode );
+                currentNode = currentNode.getPreviousNode();
+            }
+        }
 
         return way;
     }
 
-    public abstract void addNode( Node node );
 
-    public abstract Node getNode();
+    public List<Node> getWay() {
+        return way;
+    }
+
+    public int getWayCost( List< Node > way ) {
+
+        int cost = 0;
+
+        for ( Node node : way ) {
+            cost += node.getFuncValue();
+        }
+
+        return cost;
+    }
+
+
+    public abstract void addPending( Node node );
+
+    public abstract Node getPending();
 
     public abstract int getFuncValue();
-
 }

@@ -1,27 +1,26 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class Node implements Comparable< Node >{
+public class Node implements Comparable< Node > {
 
     private State state;
-    private List< Node > way;
+    private Node previousNode;
     private int funcValue;
-    private List< Node > successorList;
 
-    public Node( State state, List< Node > way, int funcValue ) {
+
+    public Node( State state, Node previousNode, int funcValue ) {
 
         this.state = state;
-        this.way = way;
+        this.previousNode = previousNode;
         this.funcValue = funcValue;
-        successorList = new ArrayList<>();
     }
 
     public int compareTo( Node node ) {
         int result;
 
-        if ( funcValue < node.funcValue )
+        if (funcValue < node.funcValue)
             result = -1;
-        else if ( funcValue == node.funcValue )
+        else if (funcValue == node.funcValue)
             result = 0;
         else
             result = 1;
@@ -34,31 +33,23 @@ public class Node implements Comparable< Node >{
         return state;
     }
 
-    public void setState( State state ) {
+    public void setState(State state) {
         this.state = state;
     }
 
-    public List< Node > getWay() {
-        return way;
+    public Node getPreviousNode() {
+        return previousNode;
     }
 
-    public void setWay( List< Node > way ) {
-        this.way = way;
+    public void setPreviousNode(Node previousNode) {
+        this.previousNode = previousNode;
     }
 
     public int getFuncValue() {
         return funcValue;
     }
 
-    public void setFuncValue( int funcValue ) {
+    public void setFuncValue(int funcValue) {
         this.funcValue = funcValue;
-    }
-
-    public List< Node > getSuccessorList() {
-        return successorList;
-    }
-
-    public void setSuccessorList( List< Node > successorList ) {
-        this.successorList = successorList;
     }
 }

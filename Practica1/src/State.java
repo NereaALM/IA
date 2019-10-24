@@ -1,16 +1,21 @@
+import java.util.ArrayList;
+import java.util.List;
 
 public class State {
 
     private int row;
     private int column;
     private int roadType;
+    private List< State > successorList;
 
     public State( int r, int c, int roadT ) {
 
         row = r;
         column = c;
         roadType = roadT;
+        successorList = new ArrayList<>();
     }
+
 
     public int getRoadType() {
         return roadType;
@@ -34,5 +39,26 @@ public class State {
 
     public void setColumn( int column ) {
         this.column = column;
+    }
+
+
+    public List<State> getSuccessorList() {
+        return successorList;
+    }
+
+    public void setSuccessorList(List<State> successorList) {
+        this.successorList = successorList;
+    }
+
+    public State getSuccessor( int index ) {
+        return successorList.get( index );
+    }
+
+    public void addSuccessor( State state ) {
+        successorList.add( state );
+    }
+
+    public void setSuccessor( int index, State state ) {
+        successorList.set( index, state );
     }
 }

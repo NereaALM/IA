@@ -8,7 +8,21 @@ public class Main {
     public static void main( String[] args ) {
 
         final int mapSize = 10;
-        int[][] map = new int[ mapSize ][ mapSize ];
+        State[][] map = new State[ mapSize ][ mapSize ];
+
+        int initPosX = 0;
+        int initPosY = 0;
+        int finalPosX = map.length - 1;
+        int finalPosY = map.length - 1;
+
+        State initState;
+        State finalState;
+
+        Node initNode;
+        Node finalNode;
+
+        SearchingAlgorithm bestFirst = new BestFirst();
+        SearchingAlgorithm aStar = new AStar();
 
         String fileDir;
         FileReader fileReader;
@@ -26,6 +40,8 @@ public class Main {
             bufferedReader = new BufferedReader( fileReader );
             scanner = new Scanner( bufferedReader );
 
+            // Reading of the map from a file:
+
             while ( scanner.hasNextLine() ) {
 
                 for( int r = 0; r < mapSize; r++ ) {
@@ -33,14 +49,22 @@ public class Main {
                     line = scanner.nextLine().trim().split( " " );
                     for( int c = 0; c < mapSize; c++ ) {
 
-                        map[ r ][ c ] = Integer.parseInt( line[ c ] );
-                        System.out.print( map[ r ][ c ] );
+                        State auxState = new State( r, c,  Integer.parseInt( line[ c ] ) );
+                        map[ r ][ c ] = auxState;
+
+                        System.out.print( auxState.getRoadType() );
                     }
                     System.out.println();
                 }
             }
 
-            // TO DO: test the algorithm.
+            // Testing of the search algorithm:
+
+            initState = map[ initPosX ][ initPosY ];
+            finalState = map[ finalPosX ][ finalPosY ];
+
+            // bestFirst.Search( initState, finalState );
+            // aStar.Search( initState, finalState );
 
         }
         catch ( FileNotFoundException e ) {

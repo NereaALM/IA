@@ -2,10 +2,10 @@ import java.util.Collections;
 
 public class AStar extends SearchingAlgorithm {
 
-    private int g;
+    private int accumCost;
     public AStar() {}
 
-    public void addNode( Node node ) {
+    public void addPending(Node node ) {
 
         // In order to find an optimum result and knowing that the heuristic is
         // not necessary true, in case of repeated nodes we save both.
@@ -13,7 +13,7 @@ public class AStar extends SearchingAlgorithm {
         Collections.sort( pendingList );
     }
 
-    public Node getNode() {
+    public Node getPending() {
 
         int pos = 0;
         Node node = pendingList.get( pos );
@@ -25,11 +25,7 @@ public class AStar extends SearchingAlgorithm {
     }
 
     public int getFuncValue() {
-        int f;
 
-        g =
-        f = g + heuristic.heuristicA();
-
-        return f;
+        return accumCost + heuristic.heuristicA();
     }
 }
