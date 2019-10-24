@@ -3,7 +3,11 @@ import java.util.Collections;
 public class AStar extends SearchingAlgorithm {
 
     private int accumCost;
-    public AStar() {}
+
+    public AStar() {
+
+        accumCost = 0;
+    }
 
     public void addPending(Node node ) {
 
