@@ -21,7 +21,7 @@ public abstract class SearchingAlgorithm {
     public List< Node > Search( State iniState, State finalState ) {
 
         Node previousNode = null;
-        Node currentNode = new Node( iniState, previousNode, getFuncValue() );
+        Node currentNode = new Node( iniState, previousNode, getFuncValue( iniState, finalState ) );
         boolean found = false;
 
 
@@ -39,7 +39,7 @@ public abstract class SearchingAlgorithm {
                 for ( State state : currentNode.getState().getSuccessorList() )
                     if( !treatedMap.containsValue( state ) ) {
 
-                        Node newNode = new Node( state, currentNode, getFuncValue() );
+                        Node newNode = new Node( state, currentNode, getFuncValue( state, finalState ) );
                         addPending( newNode );
                     }
 
@@ -47,15 +47,11 @@ public abstract class SearchingAlgorithm {
             }
         }
 
-        // TO DO:
-
         if( !found ) way = null;
 
         else {
 
-            Node node = currentNode;
-
-            while( node != null ) {
+            while( currentNode != null ) {
 
                 way.add( currentNode );
                 currentNode = currentNode.getPreviousNode();
@@ -86,5 +82,5 @@ public abstract class SearchingAlgorithm {
 
     public abstract Node getPending();
 
-    public abstract int getFuncValue();
+    public abstract int getFuncValue( State currentState, State finalState );
 }

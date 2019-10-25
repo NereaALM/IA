@@ -17,6 +17,29 @@ public class State {
     }
 
 
+    // Successor list methods:
+    public List<State> getSuccessorList() {
+        return successorList;
+    }
+
+    public void setSuccessorList(List<State> successorList) {
+        this.successorList = successorList;
+    }
+
+    public State getSuccessor( int index ) {
+        return successorList.get( index );
+    }
+
+    public void addSuccessor( State state ) {
+        successorList.add( state );
+    }
+
+    public void setSuccessor( int index, State state ) {
+        successorList.set( index, state );
+    }
+
+
+    // Getters and setters:
     public int getRoadType() {
         return roadType;
     }
@@ -39,26 +62,5 @@ public class State {
 
     public void setColumn( int column ) {
         this.column = column;
-    }
-
-
-    public List<State> getSuccessorList() {
-        return successorList;
-    }
-
-    public void setSuccessorList(List<State> successorList) {
-        this.successorList = successorList;
-    }
-
-    public State getSuccessor( int index ) {
-        return successorList.get( index );
-    }
-
-    public void addSuccessor( State state ) {
-        successorList.add( state );
-    }
-
-    public void setSuccessor( int index, State state ) {
-        successorList.set( index, state );
     }
 }

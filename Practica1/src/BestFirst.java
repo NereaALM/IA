@@ -4,7 +4,7 @@ public class BestFirst extends SearchingAlgorithm {
 
     public BestFirst() {}
 
-    public void addPending(Node node ) {
+    public void addPending( Node node ) {
 
         // The BF objective is being fast finding a way so repeated nodes are ignored.
         // !pendingList.contains( node.getState ) )
@@ -32,7 +32,7 @@ public class BestFirst extends SearchingAlgorithm {
         return node;
     }
 
-    public int getFuncValue() {
-        return heuristic.heuristicA();
+    public int getFuncValue( State currentState, State finalState ) {
+        return heuristic.distance( currentState, currentState );
     }
 }

@@ -2,6 +2,7 @@ import java.util.Collections;
 
 public class AStar extends SearchingAlgorithm {
 
+    // TO DO: Update accumCost.
     private int accumCost;
 
     public AStar() {
@@ -9,7 +10,7 @@ public class AStar extends SearchingAlgorithm {
         accumCost = 0;
     }
 
-    public void addPending(Node node ) {
+    public void addPending( Node node ) {
 
         // In order to find an optimum result and knowing that the heuristic is
         // not necessary true, in case of repeated nodes we save both.
@@ -28,8 +29,8 @@ public class AStar extends SearchingAlgorithm {
         return node;
     }
 
-    public int getFuncValue() {
+    public int getFuncValue( State currentState, State finalState ) {
 
-        return accumCost + heuristic.heuristicA();
+        return accumCost + heuristic.distance( currentState, finalState );
     }
 }
