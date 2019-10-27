@@ -7,17 +7,11 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Main {
-    // _____________________________TO DO_________________________________
-    // Accumulator of cost in A*.
-    // pendingList methods well done.
-    //____________________________________________________________________
 
     public static void main( String[] args ) {
 
         final int mapWidth = 10;
         HashMap< Integer, State > map = new HashMap<>();
-        List< Node > way;
-        SearchingAlgorithm searchingAlgorithm;
 
 
         System.out.println( "Mi primera práctica de IA! ^^" );
@@ -38,27 +32,29 @@ public class Main {
 
 
             // Best First :
-            searchingAlgorithm = new BestFirst();
-            way = searchingAlgorithm.Search( initState, finalState );
+            List< NodeBestFirst > wayBF;
+            BestFirst bestFirst = new BestFirst();
+            wayBF = bestFirst.Search( initState, finalState );
 
-            if ( way == null )
+            if ( wayBF == null )
                 System.out.println( "Final state not found" );
             else {
 
-                int bfCost = searchingAlgorithm.getWayCost( way );
+                int bfCost = bestFirst.getWayCost( wayBF );
                 System.out.println( "Total cost of Best First :\t" + bfCost );
             }
 
 
             // A* :
-            searchingAlgorithm = new AStar();
-            way = searchingAlgorithm.Search( initState, finalState );
+            List< NodeAStar > wayAStar;
+            AStar aStar = new AStar();
+            wayAStar = aStar.Search( initState, finalState );
 
-            if ( way == null )
+            if ( wayAStar == null )
                 System.out.println( "Final state not found" );
             else {
 
-                int aStarCost = searchingAlgorithm.getWayCost( way );
+                int aStarCost = aStar.getWayCost( wayAStar );
                 System.out.println( "Total cost of A* :\t" + aStarCost );
             }
         }
@@ -93,6 +89,7 @@ public class Main {
                 System.out.println();
             }
         }
+        System.out.println();
     }
 
     private static void fillSuccessorList( int mapWidth, HashMap<Integer, State> map, State currentState ) {
