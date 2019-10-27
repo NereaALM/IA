@@ -51,7 +51,7 @@ public class Heuristic {
         int distance = distance( currentState, finalState );
         int roadType = roadType( currentState );
 
-        heuristic = distance / roadType;
+        heuristic = distance + roadType;
 
         return heuristic;
     }

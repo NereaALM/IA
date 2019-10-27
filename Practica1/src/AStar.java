@@ -2,13 +2,13 @@ import java.util.Collections;
 
 public class AStar extends SearchingAlgorithm {
 
-    // TO DO: Update accumCost.
     private int accumCost;
 
     public AStar() {
 
         accumCost = 0;
     }
+
 
     public void addPending( Node node ) {
 
@@ -29,6 +29,8 @@ public class AStar extends SearchingAlgorithm {
         return node;
     }
 
+
+    // TO DO: Update accumCost.
     public int getFuncValue( State currentState, State finalState ) {
 
         return accumCost + heuristic.distance( currentState, finalState );

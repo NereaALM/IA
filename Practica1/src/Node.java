@@ -16,14 +16,16 @@ public class Node implements Comparable< Node > {
     }
 
     public int compareTo( Node node ) {
+
         int result;
 
-        if (funcValue < node.funcValue)
+        if ( this.funcValue < node.funcValue )
             result = -1;
-        else if (funcValue == node.funcValue)
+
+        else if ( this.funcValue == node.funcValue )
             result = 0;
-        else
-            result = 1;
+
+        else result = 1;
 
         return result;
     }

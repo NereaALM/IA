@@ -8,9 +8,8 @@ import java.util.Scanner;
 
 public class Main {
     // _____________________________TO DO_________________________________
-    // Solve null pointer exception with way list.
-    // Accumulator of cost in Astar.
-    // pendingList methods
+    // Accumulator of cost in A*.
+    // pendingList methods well done.
     //____________________________________________________________________
 
     public static void main( String[] args ) {

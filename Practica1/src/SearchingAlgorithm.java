@@ -61,11 +61,6 @@ public abstract class SearchingAlgorithm {
         return way;
     }
 
-
-    public List<Node> getWay() {
-        return way;
-    }
-
     public int getWayCost( List< Node > way ) {
 
         int cost = 0;
@@ -81,6 +76,7 @@ public abstract class SearchingAlgorithm {
     public abstract void addPending( Node node );
 
     public abstract Node getPending();
+
 
     public abstract int getFuncValue( State currentState, State finalState );
 }
