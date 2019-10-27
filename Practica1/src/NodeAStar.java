@@ -15,14 +15,14 @@ public class NodeAStar implements Comparable< NodeAStar >{
         this.accumCost = accumCost;
     }
 
-    public int compareTo( NodeAStar NodeAStar ) {
+    public int compareTo( NodeAStar node ) {
 
         int result;
 
-        if ( this.heuristic < NodeAStar.heuristic)
+        if ( this.getFunction() < node.getFunction())
             result = -1;
 
-        else if ( this.heuristic == NodeAStar.heuristic)
+        else if ( this.getFunction() == node.getFunction())
             result = 0;
 
         else result = 1;
@@ -32,6 +32,11 @@ public class NodeAStar implements Comparable< NodeAStar >{
 
 
     // Getters and setters:
+
+    public int getFunction() {
+        return heuristic + accumCost;
+    }
+
     public State getState() {
         return state;
     }
