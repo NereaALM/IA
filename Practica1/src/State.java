@@ -16,6 +16,9 @@ public class State {
         successorList = new ArrayList<>();
     }
 
+    public String toString() {
+        return " Position: " + column + " " + row + "\tCost:" + roadType;
+    }
 
     // Successor list methods:
     public List<State> getSuccessorList() {

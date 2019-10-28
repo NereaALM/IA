@@ -2,8 +2,6 @@ public class Heuristic {
 
     public Heuristic() {}
 
-    // TO DO:
-
     // Heuristic 1.
     public int distance( State currentState, State finalState ) {
 
@@ -47,12 +45,21 @@ public class Heuristic {
     public int distanceRoadType( State currentState, State finalState ) {
 
         int heuristic;
-
         int distance = distance( currentState, finalState );
         int roadType = roadType( currentState );
 
         heuristic = distance + roadType;
 
+        for( State stateC : currentState.getSuccessorList() )
+            for( State stateF : finalState.getSuccessorList() )
+                if( stateC == stateF )
+                    heuristic += 10;
+
         return heuristic;
+    }
+
+    // For test.
+    public int returnZero() {
+        return 0;
     }
 }

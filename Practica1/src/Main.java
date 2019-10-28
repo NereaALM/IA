@@ -42,6 +42,11 @@ public class Main {
 
                 int bfCost = bestFirst.getWayCost( wayBF );
                 System.out.println( "Total cost of Best First :\t" + bfCost );
+                System.out.println();
+
+                for ( NodeBestFirst node : wayBF )
+                    System.out.println( node.getState() );
+                System.out.println();
             }
 
 
@@ -56,6 +61,11 @@ public class Main {
 
                 int aStarCost = aStar.getWayCost( wayAStar );
                 System.out.println( "Total cost of A* :\t" + aStarCost );
+                System.out.println();
+
+                for ( NodeAStar node : wayAStar )
+                    System.out.println( node.getState() );
+                System.out.println();
             }
         }
         catch ( FileNotFoundException e ) {
@@ -98,27 +108,29 @@ public class Main {
         int c = currentState.getColumn();
 
         // Up
-        State upState = map.get( ( r - 1 ) * mapWidth + c );
+        if( r != 0 ) {
 
-        if ( upState != null && upState.getRoadType() != 0 )
-        {
-            currentState.addSuccessor( upState );
+            State upState = map.get((r - 1) * mapWidth + c);
 
-            // Down ( If it is successor, the current state has to be a successor for it too )
-            if ( ! upState.getSuccessorList().contains( currentState ) )
-                upState.addSuccessor( currentState );
+            if (upState != null && upState.getRoadType() != 0) {
+                currentState.addSuccessor(upState);
+
+                // Down ( If it is successor, the current state has to be a successor for it too )
+                upState.addSuccessor(currentState);
+            }
         }
 
         // Left
-        State leftState = map.get( r * mapWidth + ( c - 1 ) );
+        if( c != 0 ) {
 
-        if ( leftState != null && leftState.getRoadType() != 0 )
-        {
-            currentState.addSuccessor( leftState );
+            State leftState = map.get(r * mapWidth + (c - 1));
 
-            // Right
-            if ( leftState.getSuccessorList().contains( currentState ) )
-                leftState.addSuccessor( currentState );
+            if (leftState != null && leftState.getRoadType() != 0) {
+                currentState.addSuccessor(leftState);
+
+                // Right
+                leftState.addSuccessor(currentState);
+            }
         }
     }
 }

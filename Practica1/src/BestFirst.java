@@ -22,7 +22,7 @@ public class BestFirst {
     public List< NodeBestFirst > Search(State iniState, State finalState ) {
 
         NodeBestFirst previousNode = null;
-        NodeBestFirst currentNode = new NodeBestFirst( iniState, previousNode, heuristic.distance( iniState, finalState ) );
+        NodeBestFirst currentNode = new NodeBestFirst( iniState, previousNode, heuristic.roadType(iniState) );
         boolean found = false;
         addPending( currentNode );
 
@@ -31,34 +31,31 @@ public class BestFirst {
 
             currentNode = getPending();
 
-            if( currentNode.getState().equals( finalState ) )
+            if( currentNode.getState().equals( finalState ) ) {
+
                 found = true;
+
+                way = new ArrayList<>();
+
+                while (currentNode != null) {
+
+                    way.add(currentNode);
+                    currentNode = currentNode.getPreviousNode();
+                }
+
+                Collections.reverse(way);
+            }
 
             else {
 
                 for ( State state : currentNode.getState().getSuccessorList() )
                     if( !treatedMap.containsValue( state ) ) {
 
-                        NodeBestFirst newNode = new NodeBestFirst( state, currentNode, heuristic.distance( state, finalState ) );
+                        NodeBestFirst newNode = new NodeBestFirst( state, currentNode,  heuristic.roadType(state)  );
                         addPending( newNode );
                     }
-
+                    
                 treatedMap.put( currentNode.getState().hashCode(), currentNode.getState() );
-            }
-        }
-
-
-        if( !found ) way = null;
-
-        else {
-
-
-            way = new ArrayList<>();
-
-            while( currentNode != null ) {
-
-                way.add( currentNode );
-                currentNode = currentNode.getPreviousNode();
             }
         }
 
@@ -69,10 +66,12 @@ public class BestFirst {
 
         int cost = 0;
 
-        for ( NodeBestFirst node : way )
-            cost += node.getHeuristic();
+        int costInitalNode = way.get( 0 ).getState().getRoadType();
 
-        return cost;
+        for ( NodeBestFirst node : way )
+            cost += node.getState().getRoadType();
+
+        return cost - costInitalNode;
     }
 
 

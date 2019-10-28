@@ -7,12 +7,12 @@ public class NodeAStar implements Comparable< NodeAStar >{
     private int heuristic;
     private int accumCost;
 
-    public NodeAStar( State state, NodeAStar previousNode, int heuristic, int accumCost ) {
+    public NodeAStar( State state, NodeAStar previousNode, int heuristic, int currentCost ) {
 
         this.state = state;
         this.previousNode = previousNode;
         this.heuristic = heuristic;
-        this.accumCost = accumCost;
+        accumCost = getAccumCost( currentCost );
     }
 
     public int compareTo( NodeAStar node ) {
@@ -31,41 +31,24 @@ public class NodeAStar implements Comparable< NodeAStar >{
     }
 
 
-    // Getters and setters:
+    public int getAccumCost( int accumCost ) {
+
+        if( previousNode != null )
+            accumCost += previousNode.getAccumCost( accumCost );
+
+        return accumCost;
+    }
 
     public int getFunction() {
         return heuristic + accumCost;
     }
 
+
     public State getState() {
         return state;
     }
 
-    public void setState(State state) {
-        this.state = state;
-    }
-
     public NodeAStar getPreviousNode() {
         return previousNode;
-    }
-
-    public void setPreviousNode(NodeAStar previousNode) {
-        this.previousNode = previousNode;
-    }
-
-    public int getHeuristic() {
-        return heuristic;
-    }
-
-    public void setHeuristic(int heuristic) {
-        this.heuristic = heuristic;
-    }
-
-    public int getAccumCost() {
-
-        if( previousNode != null )
-            accumCost += previousNode.getAccumCost();
-
-        return accumCost;
     }
 }

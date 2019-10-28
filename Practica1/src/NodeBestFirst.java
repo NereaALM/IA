@@ -29,28 +29,11 @@ public class NodeBestFirst implements Comparable< NodeBestFirst > {
     }
 
 
-    // Getters and setters:
     public State getState() {
         return state;
     }
 
-    public void setState(State state) {
-        this.state = state;
-    }
-
     public NodeBestFirst getPreviousNode() {
         return previousNode;
-    }
-
-    public void setPreviousNode(NodeBestFirst previousNode) {
-        this.previousNode = previousNode;
-    }
-
-    public int getHeuristic() {
-        return heuristic;
-    }
-
-    public void setHeuristic(int heuristic) {
-        this.heuristic = heuristic;
     }
 }
