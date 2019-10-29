@@ -10,19 +10,21 @@ public class BestFirst {
     protected List < NodeBestFirst > pendingList;
     protected HashMap< Integer, State > treatedMap;
     protected List < NodeBestFirst > way;
+    private int treatedCont;
 
     public BestFirst() {
 
         pendingList = new ArrayList<>();
         heuristic = new Heuristic();
         treatedMap = new HashMap<>();
+        treatedCont = 0;
     }
 
 
     public List< NodeBestFirst > Search(State iniState, State finalState ) {
 
         NodeBestFirst previousNode = null;
-        NodeBestFirst currentNode = new NodeBestFirst( iniState, previousNode, heuristic.roadType(iniState) );
+        NodeBestFirst currentNode = new NodeBestFirst( iniState, previousNode, heuristic.distanceRoadType(iniState, finalState) );
         boolean found = false;
         addPending( currentNode );
 
@@ -51,11 +53,12 @@ public class BestFirst {
                 for ( State state : currentNode.getState().getSuccessorList() )
                     if( !treatedMap.containsValue( state ) ) {
 
-                        NodeBestFirst newNode = new NodeBestFirst( state, currentNode,  heuristic.roadType(state)  );
+                        NodeBestFirst newNode = new NodeBestFirst( state, currentNode,  heuristic.distanceRoadType(state, finalState) );
                         addPending( newNode );
                     }
                     
                 treatedMap.put( currentNode.getState().hashCode(), currentNode.getState() );
+                treatedCont++;
             }
         }
 
@@ -74,6 +77,9 @@ public class BestFirst {
         return cost - costInitalNode;
     }
 
+    public int getTreatedCont() {
+        return treatedCont;
+    }
 
     public void addPending( NodeBestFirst node ) {
 

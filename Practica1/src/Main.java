@@ -45,8 +45,7 @@ public class Main {
                 for ( NodeBestFirst node : wayBF )
                     System.out.println( node.getState() );
             }
-
-            System.out.println("\n");
+            System.out.println("\nNombre de nodes tractats: " + bestFirst.getTreatedCont() + "\n");
 
 
             // A* :
@@ -67,7 +66,9 @@ public class Main {
                 for ( NodeAStar node : wayAStar )
                     System.out.println( node.getState() );
             }
-            System.out.println("\n");
+            System.out.println("\nNombre de nodes tractats: " + aStar.getTreatedCont() + "\n");
+
+
         }
         catch ( FileNotFoundException e ) {
 

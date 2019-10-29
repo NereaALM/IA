@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="55477582-f657-46d9-9201-3d2f545dc0d9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Map2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Map2.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Practica1/AStar.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Practica1/AStar.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Practica1/BestFirst.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Practica1/BestFirst.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Practica1/Heuristic.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Practica1/Heuristic.class" afterDir="false" />
@@ -11,10 +11,10 @@
       <change beforePath="$PROJECT_DIR$/out/production/Practica1/NodeAStar.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Practica1/NodeAStar.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Practica1/NodeBestFirst.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Practica1/NodeBestFirst.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Practica1/State.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Practica1/State.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AStar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AStar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BestFirst.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BestFirst.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Heuristic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Heuristic.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/NodeAStar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/NodeAStar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/NodeBestFirst.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/NodeBestFirst.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/State.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/State.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -30,27 +30,8 @@
       </list>
     </option>
   </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>way</find>
-      <find>way,</find>
-      <find>Node</find>
-      <find>NodeBestFirst</find>
-      <find>Node</find>
-    </findStrings>
-    <replaceStrings>
-      <replace>NodeAStar</replace>
-      <replace>NodeAStar</replace>
-      <replace>NodeBestFirst</replace>
-    </replaceStrings>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
-  </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="683" />
-    <option name="width" value="683" />
-    <option name="height" value="728" />
   </component>
   <component name="ProjectId" id="1S0jNVUixxly8y9JE85IKbtD6y8" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -119,7 +100,7 @@
       <workItem from="1572074178181" duration="3813000" />
       <workItem from="1572104176413" duration="2902000" />
       <workItem from="1572168955428" duration="3440000" />
-      <workItem from="1572371557790" duration="818000" />
+      <workItem from="1572371557790" duration="7960000" />
     </task>
     <servers />
   </component>

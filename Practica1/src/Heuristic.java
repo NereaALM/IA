@@ -6,9 +6,7 @@ public class Heuristic {
     public int distance( State currentState, State finalState ) {
 
         int heuristic;
-
-        int incrementX;
-        int incrementY;
+        int incrementX, incrementY;
 
         int iniX = currentState.getColumn();
         int iniY = currentState.getRow();
@@ -48,18 +46,17 @@ public class Heuristic {
         int distance = distance( currentState, finalState );
         int roadType = roadType( currentState );
 
-        heuristic = distance + roadType;
+        // The operation is chosen because we are working with roads and
+        // probably the type of the following states will be the same.
+        heuristic = distance * roadType;
 
+        // If there are common states between this node and the last we have a way.
         for( State stateC : currentState.getSuccessorList() )
             for( State stateF : finalState.getSuccessorList() )
                 if( stateC == stateF )
-                    heuristic += 10;
+                    heuristic -= 10;
+         if ( heuristic < 0 ) heuristic = 0;
 
         return heuristic;
-    }
-
-    // For test.
-    public int returnZero() {
-        return 0;
     }
 }

@@ -9,19 +9,21 @@ public class AStar {
     protected HashMap< Integer, State > treatedMap;
     protected List < NodeAStar > way;
     protected Heuristic heuristic;
+    private int treatedCont;
 
     public AStar() {
 
         pendingList = new ArrayList<>();
         treatedMap = new HashMap<>();
         heuristic = new Heuristic();
+        treatedCont = 0;
     }
 
 
     public List< NodeAStar > Search( State iniState, State finalState ) {
 
         NodeAStar previousNode = null;
-        NodeAStar currentNode = new NodeAStar( iniState, previousNode, heuristic.roadType(iniState), iniState.getRoadType() );
+        NodeAStar currentNode = new NodeAStar( iniState, previousNode, heuristic.distanceRoadType(iniState, finalState), iniState.getRoadType() );
         boolean found = false;
         addPending( currentNode );
 
@@ -50,11 +52,12 @@ public class AStar {
                 for ( State state : currentNode.getState().getSuccessorList() )
                     if( !treatedMap.containsValue( state ) ) {
 
-                        NodeAStar newNode = new NodeAStar( state, currentNode,  heuristic.roadType(state) , state.getRoadType() );
+                        NodeAStar newNode = new NodeAStar( state, currentNode,  heuristic.distanceRoadType(state, finalState) , state.getRoadType() );
                         addPending( newNode );
                     }
 
                 treatedMap.put( currentNode.getState().hashCode(), currentNode.getState() );
+                treatedCont++;
             }
         }
 
@@ -71,6 +74,10 @@ public class AStar {
             cost += node.getState().getRoadType();
 
         return cost - costInitalNode;
+    }
+
+    public int getTreatedCont() {
+        return treatedCont;
     }
 
 
