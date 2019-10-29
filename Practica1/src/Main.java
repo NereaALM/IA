@@ -1,7 +1,6 @@
 import java.io.FileNotFoundException;
 import java.io.BufferedReader;
 import java.io.FileReader;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Scanner;
@@ -13,9 +12,6 @@ public class Main {
         final int mapWidth = 10;
         HashMap< Integer, State > map = new HashMap<>();
 
-
-        System.out.println( "Mi primera práctica de IA! ^^" );
-
         try {
 
             // Read map from file.
@@ -24,14 +20,16 @@ public class Main {
             // Initialize searching algorithm input arguments.
             int initPosX = 0;
             int initPosY = 0;
+            State initState = map.get( initPosY * mapWidth + initPosX );
+
             int finalPosX = mapWidth - 1;
             int finalPosY = mapWidth - 1;
-
-            State initState = map.get( initPosY * mapWidth + initPosX );
             State finalState = map.get( finalPosY * mapWidth + finalPosX );
 
 
             // Best First :
+            System.out.println( "Best First\n" );
+
             List< NodeBestFirst > wayBF;
             BestFirst bestFirst = new BestFirst();
             wayBF = bestFirst.Search( initState, finalState );
@@ -41,16 +39,19 @@ public class Main {
             else {
 
                 int bfCost = bestFirst.getWayCost( wayBF );
-                System.out.println( "Total cost of Best First :\t" + bfCost );
-                System.out.println();
+                System.out.println( "Total cost:\t" + bfCost + "\n" );
 
+                System.out.println("Way:");
                 for ( NodeBestFirst node : wayBF )
                     System.out.println( node.getState() );
-                System.out.println();
             }
+
+            System.out.println("\n");
 
 
             // A* :
+            System.out.println("A*\n");
+
             List< NodeAStar > wayAStar;
             AStar aStar = new AStar();
             wayAStar = aStar.Search( initState, finalState );
@@ -60,13 +61,13 @@ public class Main {
             else {
 
                 int aStarCost = aStar.getWayCost( wayAStar );
-                System.out.println( "Total cost of A* :\t" + aStarCost );
-                System.out.println();
+                System.out.println( "Total cost:\t" + aStarCost + "\n" );
 
+                System.out.println("Way:");
                 for ( NodeAStar node : wayAStar )
                     System.out.println( node.getState() );
-                System.out.println();
             }
+            System.out.println("\n");
         }
         catch ( FileNotFoundException e ) {
 
@@ -93,10 +94,7 @@ public class Main {
                     State currentState = new State( r, c,  Integer.parseInt( line[ c ] ) );
                     fillSuccessorList(mapWidth, map, currentState);
                     map.put( r * mapWidth + c, currentState );
-
-                    System.out.print( currentState.getRoadType() );
                 }
-                System.out.println();
             }
         }
         System.out.println();

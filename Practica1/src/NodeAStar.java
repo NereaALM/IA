@@ -1,7 +1,6 @@
 
 public class NodeAStar implements Comparable< NodeAStar >{
 
-
     private State state;
     private NodeAStar previousNode;
     private int heuristic;

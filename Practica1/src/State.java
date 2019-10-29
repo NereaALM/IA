@@ -25,45 +25,21 @@ public class State {
         return successorList;
     }
 
-    public void setSuccessorList(List<State> successorList) {
-        this.successorList = successorList;
-    }
-
-    public State getSuccessor( int index ) {
-        return successorList.get( index );
-    }
-
     public void addSuccessor( State state ) {
         successorList.add( state );
     }
 
-    public void setSuccessor( int index, State state ) {
-        successorList.set( index, state );
-    }
 
-
-    // Getters and setters:
+    // Getters:
     public int getRoadType() {
         return roadType;
-    }
-
-    public void setRoadType( int roadType ) {
-        this.roadType = roadType;
     }
 
     public int getRow() {
         return row;
     }
 
-    public void setRow( int row ) {
-        this.row = row;
-    }
-
     public int getColumn() {
         return column;
-    }
-
-    public void setColumn( int column ) {
-        this.column = column;
     }
 }

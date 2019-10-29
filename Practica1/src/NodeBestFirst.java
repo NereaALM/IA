@@ -5,7 +5,6 @@ public class NodeBestFirst implements Comparable< NodeBestFirst > {
     private NodeBestFirst previousNode;
     private int heuristic;
 
-
     public NodeBestFirst(State state, NodeBestFirst previousNode, int heuristic) {
 
         this.state = state;
@@ -29,11 +28,11 @@ public class NodeBestFirst implements Comparable< NodeBestFirst > {
     }
 
 
-    public State getState() {
-        return state;
-    }
-
     public NodeBestFirst getPreviousNode() {
         return previousNode;
+    }
+
+    public State getState() {
+        return state;
     }
 }
