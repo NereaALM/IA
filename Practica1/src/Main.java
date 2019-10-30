@@ -38,14 +38,14 @@ public class Main {
                 System.out.println( "Final state not found" );
             else {
 
-                int bfCost = bestFirst.getWayCost( wayBF );
-                System.out.println( "Total cost:\t" + bfCost + "\n" );
+                int bfCost = bestFirst.getWayCost(wayBF);
+                System.out.println("Total cost:\t" + bfCost + "\n");
+                System.out.println("\nNombre de nodes tractats: " + bestFirst.getTreatedCont());
 
                 System.out.println("Way:");
-                for ( NodeBestFirst node : wayBF )
-                    System.out.println( node.getState() );
+                for (NodeBestFirst node : wayBF)
+                    System.out.println(node.getState());
             }
-            System.out.println("\nNombre de nodes tractats: " + bestFirst.getTreatedCont() + "\n");
 
 
             // A* :
@@ -61,12 +61,12 @@ public class Main {
 
                 int aStarCost = aStar.getWayCost( wayAStar );
                 System.out.println( "Total cost:\t" + aStarCost + "\n" );
+                System.out.println("\nNombre de nodes tractats: " + aStar.getTreatedCont());
 
                 System.out.println("Way:");
                 for ( NodeAStar node : wayAStar )
                     System.out.println( node.getState() );
             }
-            System.out.println("\nNombre de nodes tractats: " + aStar.getTreatedCont() + "\n");
 
 
         }
@@ -92,9 +92,12 @@ public class Main {
                 line = scanner.nextLine().trim().split( " " );
                 for( int c = 0; c < mapWidth; c++ ) {
 
-                    State currentState = new State( r, c,  Integer.parseInt( line[ c ] ) );
-                    fillSuccessorList(mapWidth, map, currentState);
-                    map.put( r * mapWidth + c, currentState );
+                    if( Integer.parseInt( line[ c ] ) != 0 ) {
+
+                        State currentState = new State(r, c, Integer.parseInt(line[c]));
+                        fillSuccessorList(mapWidth, map, currentState);
+                        map.put(r * mapWidth + c, currentState);
+                    }
                 }
             }
         }

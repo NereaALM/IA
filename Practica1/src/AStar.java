@@ -23,7 +23,7 @@ public class AStar {
     public List< NodeAStar > Search( State iniState, State finalState ) {
 
         NodeAStar previousNode = null;
-        NodeAStar currentNode = new NodeAStar( iniState, previousNode, heuristic.distanceRoadType(iniState, finalState), iniState.getRoadType() );
+        NodeAStar currentNode = new NodeAStar( iniState, previousNode, heuristic.distanceRoadType(iniState, finalState) );
         boolean found = false;
         addPending( currentNode );
 
@@ -52,7 +52,7 @@ public class AStar {
                 for ( State state : currentNode.getState().getSuccessorList() )
                     if( !treatedMap.containsValue( state ) ) {
 
-                        NodeAStar newNode = new NodeAStar( state, currentNode,  heuristic.distanceRoadType(state, finalState) , state.getRoadType() );
+                        NodeAStar newNode = new NodeAStar( state, currentNode,  heuristic.distanceRoadType(state, finalState) );
                         addPending( newNode );
                     }
 

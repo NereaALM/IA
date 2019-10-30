@@ -6,12 +6,12 @@ public class NodeAStar implements Comparable< NodeAStar >{
     private int heuristic;
     private int accumCost;
 
-    public NodeAStar( State state, NodeAStar previousNode, int heuristic, int currentCost ) {
+    public NodeAStar( State state, NodeAStar previousNode, int heuristic ) {
 
         this.state = state;
         this.previousNode = previousNode;
         this.heuristic = heuristic;
-        accumCost = getAccumCost( currentCost );
+        accumCost = getAccumCost( 0 );
     }
 
     public int compareTo( NodeAStar node ) {
@@ -34,6 +34,8 @@ public class NodeAStar implements Comparable< NodeAStar >{
 
         if( previousNode != null )
             accumCost += previousNode.getAccumCost( accumCost );
+
+        accumCost += this.state.getRoadType();
 
         return accumCost;
     }
