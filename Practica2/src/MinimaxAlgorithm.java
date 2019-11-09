@@ -1,30 +1,81 @@
 public class MinimaxAlgorithm {
 
-    private int maxLevel;
     private Heuristic heuristic;
+    private int maxExpLevel;
 
-    public MinimaxAlgorithm(){
 
-        maxLevel = 0;
-        heuristic = new Heuristic();
+    public MinimaxAlgorithm( int maxExpLevel ) {
+        this.maxExpLevel = maxExpLevel;
     }
 
     public Node minimax( Node currentNode, int currentLevel ) {
 
-        Node node;
+        Node result;
 
-        if( isFinal( currentNode ) )
-            node = new Node( Integer.MAX_VALUE );
+        // Direct cases:
+        if( isFinal( currentNode ) ) {
 
-        else if ( currentLevel == maxLevel )
-            node = new Node( heuristic(  ) );
+            if( isWinner( currentNode, currentLevel ) )
+                result = new Node( Integer.MAX_VALUE );
 
+            else result = new Node( Integer.MIN_VALUE );
+        }
+        else if( currentLevel == maxExpLevel )
+            result = new Node( heuristic.heuristic() );
 
+        // Recursive case:
+        else {
 
-        return node;
+            if( isMax( currentLevel ) )
+                result = new Node( Integer.MIN_VALUE );
+
+            else result = new Node( Integer.MAX_VALUE );
+
+            while( successorsExist( currentNode ) ) {
+
+                Node successor = followingSuccessor( currentNode );
+                Node newNode = minimax( successor, currentLevel + 1 );
+
+                if( isMax( currentLevel ) ) {
+
+                    if ( newNode.getHeuristic() > result.getHeuristic() ) {
+
+                        result.setHeuristic( newNode.getHeuristic() );
+                        result.setState( successor.getState() );
+                    }
+                }
+                else {
+
+                    if( newNode.getHeuristic() < result.getHeuristic() ) {
+
+                        result.setHeuristic( newNode.getHeuristic() );
+                        result.setState( successor.getState() );
+                    }
+                }
+            }
+        }
+
+        return result;
     }
 
-    private boolean isFinal(Node currentNode) {
-        return false;
+    // TO DO:
+    private boolean isWinner( Node currentNode, int currentLevel ) {
+        return true;
+    }
+
+    private Node followingSuccessor( Node currentNode ) {
+        return null;
+    }
+
+    private boolean successorsExist( Node currentNode ) {
+        return true;
+    }
+
+    private boolean isMax( int currentLevel ) {
+        return true;
+    }
+
+    private boolean isFinal( Node currentNode ) {
+        return true;
     }
 }

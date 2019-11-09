@@ -1,6 +1,7 @@
 public class Heuristic {
 
-    public Heuristic( Node node ) {}
+    public Heuristic() {
+    }
 
     public int heuristic() {
         return 0;
