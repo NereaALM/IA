@@ -1,3 +1,7 @@
+package algorithm;
+
+import structure.State;
+
 public class Node {
 
     private State state;

@@ -1,3 +1,5 @@
+package structure;
+
 public class DominoToken {
 
     private int right;

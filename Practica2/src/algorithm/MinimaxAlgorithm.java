@@ -1,11 +1,16 @@
+package algorithm;
+
+import heuristic.Heuristic;
+
 public class MinimaxAlgorithm {
 
     private Heuristic heuristic;
     private int maxExpLevel;
 
-
-    public MinimaxAlgorithm( int maxExpLevel ) {
+/*
+    public MinimaxAlgorithm( int maxExpLevel, heuristic ) {
         this.maxExpLevel = maxExpLevel;
+        heuristic = new Heu
     }
 
     public Node minimax( Node currentNode, int currentLevel ) {
@@ -78,4 +83,6 @@ public class MinimaxAlgorithm {
     private boolean isFinal( Node currentNode ) {
         return true;
     }
+
+ */
 }
