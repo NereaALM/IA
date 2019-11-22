@@ -2,12 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d7a2c2d5-10c1-4013-9645-94d5a7e7538a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/TO DO.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Practica1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Practica1/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TO DO.txt" beforeDir="false" afterPath="$PROJECT_DIR$/TO DO.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/algorithm/MinimaxAlgorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/algorithm/MinimaxAlgorithm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/algorithm/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/algorithm/Node.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/heuristic/Heuristic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/heuristic/Heuristic.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/heuristic/Heuristic1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/heuristic/Heuristic1.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/heuristic/Heuristic2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/heuristic/Heuristic2.java" afterDir="false" />
@@ -43,6 +41,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Java" />
   </component>
   <component name="RunDashboard">
@@ -85,7 +84,7 @@
       <workItem from="1573298877380" duration="10111000" />
       <workItem from="1574271317770" duration="4282000" />
       <workItem from="1574336766822" duration="10242000" />
-      <workItem from="1574434017596" duration="7324000" />
+      <workItem from="1574434017596" duration="13299000" />
     </task>
     <servers />
   </component>

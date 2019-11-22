@@ -11,26 +11,8 @@ public class State {
 
     // Initialization for the beginning of the game.
     public State() {
-
         board = null;
-        player1 = new LinkedList<>();
-        player2 = new LinkedList<>();
-
-        Random random = new Random();
-        LinkedList< DominoToken > tokenList = createTokens();
-        for( DominoToken token : tokenList ) {
-
-            if( player1.size() == 14 )
-                player2.add( token );
-
-            else if( player2.size() == 14 )
-                player1.add( token );
-
-            else if( random.nextInt() % 2 == 0 )
-                player1.add( token );
-
-            else player2.add( token );
-        }
+        distributeTokens();
     }
 
     public State( DominoToken board,
@@ -58,6 +40,28 @@ public class State {
         }
 
         return tokenList;
+    }
+
+    public void distributeTokens() {
+
+        player1 = new LinkedList<>();
+        player2 = new LinkedList<>();
+
+        Random random = new Random();
+        LinkedList< DominoToken > tokenList = createTokens();
+        for( DominoToken token : tokenList ) {
+
+            if( player1.size() == 14 )
+                player2.add( token );
+
+            else if( player2.size() == 14 )
+                player1.add( token );
+
+            else if( random.nextInt() % 2 == 0 )
+                player1.add( token );
+
+            else player2.add( token );
+        }
     }
 
     // This method returns 0 if the state is not final
@@ -95,5 +99,29 @@ public class State {
     public boolean isWinner() {
         boolean isWinner = false;
         return false;
+    }
+
+    public DominoToken getBoard() {
+        return board;
+    }
+
+    public void setBoard( DominoToken board ) {
+        this.board = board;
+    }
+
+    public LinkedList< DominoToken > getPlayer1() {
+        return player1;
+    }
+
+    public void setPlayer1( LinkedList< DominoToken > player1 ) {
+        this.player1 = player1;
+    }
+
+    public LinkedList< DominoToken > getPlayer2() {
+        return player2;
+    }
+
+    public void setPlayer2( LinkedList< DominoToken > player2 ) {
+        this.player2 = player2;
     }
 }

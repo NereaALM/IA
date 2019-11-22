@@ -11,7 +11,7 @@ public class MinimaxAlgorithm {
         this.maxExpLevel = maxExpLevel;
         this.heuristic = heuristic;
     }
-/*
+
     public Node minimax( Node currentNode, int currentLevel ) {
         Node result;
 
@@ -30,6 +30,7 @@ public class MinimaxAlgorithm {
                 result = new Node( currentNode.getState(), -Float.MAX_VALUE );
             else result = new Node( currentNode.getState(), Float.MAX_VALUE );
 
+            /*
             while( successorsExist( currentNode ) ) {
                 Node successor = followingSuccessor( currentNode );
                 Node newNode = minimax( successor, currentLevel + 1 );
@@ -41,6 +42,8 @@ public class MinimaxAlgorithm {
                     result = new Node( successor.getState(), newNode.getHeuristic());
                 }
             }
+            */
+
         }
 
         return result;
@@ -49,5 +52,5 @@ public class MinimaxAlgorithm {
     // Return true if currentLevel is a pair number.
     private boolean isMax( int currentLevel ) {
         return currentLevel % 2 == 0;
-    }*/
+    }
 }

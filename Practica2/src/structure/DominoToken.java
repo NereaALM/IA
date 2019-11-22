@@ -10,6 +10,7 @@ public class DominoToken {
         this.right = right;
     }
 
+
     public DominoToken reverse() {
         return new DominoToken( right, left );
     }
