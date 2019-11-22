@@ -7,55 +7,38 @@ public class MinimaxAlgorithm {
     private Heuristic heuristic;
     private int maxExpLevel;
 
-/*
-    public MinimaxAlgorithm( int maxExpLevel, heuristic ) {
+    public MinimaxAlgorithm( int maxExpLevel, Heuristic heuristic ) {
         this.maxExpLevel = maxExpLevel;
-        heuristic = new Heu
+        this.heuristic = heuristic;
     }
-
+/*
     public Node minimax( Node currentNode, int currentLevel ) {
-
         Node result;
 
         // Direct cases:
-        if( isFinal( currentNode ) ) {
-
-            if( isWinner( currentNode, currentLevel ) )
-                result = new Node( Integer.MAX_VALUE );
-
-            else result = new Node( Integer.MIN_VALUE );
+        if( currentNode.getState().isFinal() != 0 ) {
+            if( currentNode.getState().isWinner() )
+                result = new Node( currentNode.getState(), Float.MAX_VALUE );
+            else result = new Node( currentNode.getState(), -Float.MAX_VALUE );
         }
         else if( currentLevel == maxExpLevel )
-            result = new Node( heuristic.heuristic() );
+            result = new Node( currentNode.getState(), heuristic.heuristic() );
 
         // Recursive case:
         else {
-
             if( isMax( currentLevel ) )
-                result = new Node( Integer.MIN_VALUE );
-
-            else result = new Node( Integer.MAX_VALUE );
+                result = new Node( currentNode.getState(), -Float.MAX_VALUE );
+            else result = new Node( currentNode.getState(), Float.MAX_VALUE );
 
             while( successorsExist( currentNode ) ) {
-
                 Node successor = followingSuccessor( currentNode );
                 Node newNode = minimax( successor, currentLevel + 1 );
-
-                if( isMax( currentLevel ) ) {
-
-                    if ( newNode.getHeuristic() > result.getHeuristic() ) {
-
-                        result.setHeuristic( newNode.getHeuristic() );
-                        result.setState( successor.getState() );
+                if( isMax( currentLevel ) )
+                    if( newNode.getHeuristic() > result.getHeuristic() ) {
+                        result = new Node( successor.getState(), newNode.getHeuristic());
                     }
-                }
-                else {
-
-                    if( newNode.getHeuristic() < result.getHeuristic() ) {
-
-                        result.setHeuristic( newNode.getHeuristic() );
-                        result.setState( successor.getState() );
-                    }
+                else if( newNode.getHeuristic() < result.getHeuristic() ) {
+                    result = new Node( successor.getState(), newNode.getHeuristic());
                 }
             }
         }
@@ -63,26 +46,8 @@ public class MinimaxAlgorithm {
         return result;
     }
 
-    // TO DO:
-    private boolean isWinner( Node currentNode, int currentLevel ) {
-        return true;
-    }
-
-    private Node followingSuccessor( Node currentNode ) {
-        return null;
-    }
-
-    private boolean successorsExist( Node currentNode ) {
-        return true;
-    }
-
+    // Return true if currentLevel is a pair number.
     private boolean isMax( int currentLevel ) {
-        return true;
-    }
-
-    private boolean isFinal( Node currentNode ) {
-        return true;
-    }
-
- */
+        return currentLevel % 2 == 0;
+    }*/
 }

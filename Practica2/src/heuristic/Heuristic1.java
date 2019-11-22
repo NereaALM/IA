@@ -1,8 +1,8 @@
 package heuristic;
 
-public class Heuristic1 extends Heuristic {
+public class Heuristic1 implements Heuristic {
     @Override
-    protected int heuristic() {
+    public float heuristic() {
         return 0;
     }
 }

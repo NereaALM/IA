@@ -1,5 +1,5 @@
 package heuristic;
 
-public abstract class Heuristic {
-    protected abstract int heuristic();
+public interface Heuristic {
+    float heuristic();
 }

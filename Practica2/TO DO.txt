@@ -1,0 +1,4 @@
+Menu de opciones donde elegir algoritmo, heuristica y modo de juego.
+implementar maquina contra maquina con minimax
+empezar a desarrollar más las heuristicas
+implementar alpha-beta

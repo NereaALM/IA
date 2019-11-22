@@ -2,21 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="55477582-f657-46d9-9201-3d2f545dc0d9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../Practica2/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Practica2/src/heuristic/Heuristic.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Practica2/src/heuristic/Heuristic1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Practica2/src/heuristic/Heuristic2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Practica2/src/heuristic/Heuristic3.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Practica2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Practica2/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Practica2/src/AlphaBetaAlgorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Practica2/src/algorithm/AlphaBetaAlgorithm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Practica2/src/DominoToken.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Practica2/src/structure/DominoToken.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Practica2/src/Heuristic.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Practica2/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Practica2/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Practica2/src/MinimaxAlgorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Practica2/src/algorithm/MinimaxAlgorithm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Practica2/src/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Practica2/src/algorithm/Node.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Practica2/src/State.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Practica2/src/structure/State.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Practica2/src/algorithm/MinimaxAlgorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Practica2/src/algorithm/MinimaxAlgorithm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Practica2/src/algorithm/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Practica2/src/algorithm/Node.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Practica2/src/heuristic/Heuristic.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Practica2/src/heuristic/Heuristic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Practica2/src/heuristic/Heuristic1.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Practica2/src/heuristic/Heuristic1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Practica2/src/heuristic/Heuristic2.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Practica2/src/heuristic/Heuristic2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Practica2/src/heuristic/Heuristic3.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Practica2/src/heuristic/Heuristic3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Practica2/src/structure/DominoToken.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Practica2/src/structure/DominoToken.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Practica2/src/structure/State.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Practica2/src/structure/State.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -46,7 +42,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1572441046934" />
     <property name="extract.method.default.visibility" value="private" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Practica2" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Java" />
   </component>
   <component name="RecentsManager">
@@ -103,7 +99,9 @@
       <workItem from="1572104176413" duration="2902000" />
       <workItem from="1572168955428" duration="3440000" />
       <workItem from="1572371557790" duration="7960000" />
-      <workItem from="1574278085476" duration="641000" />
+      <workItem from="1574278085476" duration="642000" />
+      <workItem from="1574337685996" duration="1286000" />
+      <workItem from="1574434003583" duration="13000" />
     </task>
     <servers />
   </component>

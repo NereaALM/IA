@@ -5,18 +5,18 @@ import structure.State;
 public class Node {
 
     private State state;
-    private int heuristic;
+    private float heuristic;
 
-    public Node( int heuristic ) {
+    public Node( State state, float heuristic ) {
+        this.state = state;
         this.heuristic = heuristic;
-        state = new State();
     }
 
-    public int getHeuristic() {
+    public float getHeuristic() {
         return heuristic;
     }
 
-    public void setHeuristic( int heuristic ) {
+    public void setHeuristic( float heuristic ) {
         this.heuristic = heuristic;
     }
 
