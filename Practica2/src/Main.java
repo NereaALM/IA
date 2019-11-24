@@ -10,37 +10,11 @@ public class Main {
     private static Heuristic heuristicMac1;
     private static Heuristic heuristicMac2;
 
+
     public static void main( String[] args ) {
         gameModeSelector();
     }
 
-
-    private static void gameModeSelector() {
-
-        Scanner scanner = new Scanner( System.in );
-        System.out.println(
-                "Select an option: \n" +
-                        "\t 1. Machine vs Machine \n" +
-                        "\t 2. Machine vs Person");
-        int gameType = scanner.nextInt();
-
-        switch ( gameType ) {
-
-            // 1. Machine vs Machine
-            case 1:
-                gameMachineVsMachine();
-                break;
-
-            // 2. Machine vs Person
-            case 2:
-                gameMachineVsPerson();
-                break;
-
-            default:
-                System.out.println("Invalid option");
-                break;
-        }
-    }
 
     private static void algorithmSelector( Heuristic heuristic) {
 
@@ -60,6 +34,7 @@ public class Main {
 
             // AlphaBeta
             case 2:
+                AlphaBetaAlgorithm alphaBetaAlgorithm = new AlphaBetaAlgorithm( maxExpLevel, heuristic );
                 break;
 
             default:
@@ -103,21 +78,50 @@ public class Main {
         return heuristic;
     }
 
+    private static void gameModeSelector() {
+
+        Scanner scanner = new Scanner( System.in );
+        System.out.println(
+                "Select an option: \n" +
+                        "\t 1. Machine vs Machine \n" +
+                        "\t 2. Machine vs Person");
+        int gameType = scanner.nextInt();
+
+        switch ( gameType ) {
+
+            // 1. Machine vs Machine
+            case 1:
+                gameMachineVsMachine();
+                break;
+
+            // 2. Machine vs Person
+            case 2:
+                gameMachineVsPerson();
+                break;
+
+            default:
+                System.out.println("Invalid option");
+                break;
+        }
+    }
+
     private static void gameMachineVsMachine() {
+
         // Machine 1
         heuristicMac1 = heuristicSelector( heuristicMac1 );
         algorithmSelector( heuristicMac1 );
+        State stateMac1 = new State();
+        Node nodeMac1 = new Node( stateMac1, heuristicMac1.heuristic( stateMac1 ) );
+
         // Machine 2
         heuristicMac2 = heuristicSelector( heuristicMac2 );
         algorithmSelector( heuristicMac2 );
-
-        // Set initial state in which lists are filled and board is empty( null ).
-        State iniState = new State();
-        Node iniNode = new Node( iniState, heuristicMac1.heuristic( iniState ) );
-
+        State stateMac2 = new State();
+        Node nodeMac2 = new Node( stateMac2, heuristicMac1.heuristic( stateMac2 ) );
     }
 
     private static void gameMachineVsPerson() {
+
         heuristicMac1 = heuristicSelector( heuristicMac1 );
         algorithmSelector( heuristicMac1 );
 

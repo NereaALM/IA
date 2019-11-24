@@ -3,21 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="d7a2c2d5-10c1-4013-9645-94d5a7e7538a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Practica2/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Practica2/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Practica2/algorithm/MinimaxAlgorithm.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Practica2/heuristic/Heuristic.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Practica2/heuristic/Heuristic.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Practica2/heuristic/Heuristic1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Practica2/heuristic/Heuristic1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Practica2/heuristic/Heuristic2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Practica2/heuristic/Heuristic2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Practica2/heuristic/Heuristic3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Practica2/heuristic/Heuristic3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Practica2/structure/DominoToken.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Practica2/structure/DominoToken.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Practica2/structure/State.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Practica2/structure/State.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/algorithm/AlphaBetaAlgorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/algorithm/AlphaBetaAlgorithm.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/algorithm/MinimaxAlgorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/algorithm/MinimaxAlgorithm.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/algorithm/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/algorithm/Node.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/heuristic/Heuristic1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/heuristic/Heuristic1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/heuristic/Heuristic2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/heuristic/Heuristic2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/heuristic/Heuristic3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/heuristic/Heuristic3.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/structure/DominoToken.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/structure/DominoToken.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/structure/State.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/structure/State.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -29,8 +18,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -93,7 +82,7 @@
       <workItem from="1574336766822" duration="10242000" />
       <workItem from="1574434017596" duration="13299000" />
       <workItem from="1574503961217" duration="7833000" />
-      <workItem from="1574573986561" duration="12450000" />
+      <workItem from="1574573986561" duration="17032000" />
     </task>
     <servers />
   </component>

@@ -11,37 +11,19 @@ public class State {
 
     public State( DominoToken board,
                   LinkedList< DominoToken > myTokens,
-                  LinkedList< DominoToken > opponentTokens ) {
+                  LinkedList< DominoToken > player2 ) {
 
         this.board = board;
         this.myTokens = myTokens;
-        this.opponentTokens = opponentTokens;
+        this.opponentTokens = player2;
     }
+
 
     // Initialization for the beginning of the game.
     // The board is null and the tokens are distributed randomly.
     public State() {
         board = null;
         distributeTokens();
-    }
-
-
-    // This method creates a list with the tokens of the game.
-    public LinkedList< DominoToken > createTokens() {
-
-        LinkedList< DominoToken > tokenList = new LinkedList<>();
-
-        int accum = 0;
-        for( int left = 0; left <= 6; left++ ) {
-            int right = 0 + accum;
-            while( right <= 6 ) {
-                tokenList.add( new DominoToken( left, right ) );
-                right++;
-            }
-            accum++;
-        }
-
-        return tokenList;
     }
 
     // This method fill the lists of the players randomly.
@@ -67,6 +49,25 @@ public class State {
         }
     }
 
+    // This method creates a list with the tokens of the game.
+    public LinkedList< DominoToken > createTokens() {
+
+        LinkedList< DominoToken > tokenList = new LinkedList<>();
+
+        int accum = 0;
+        for( int left = 0; left <= 6; left++ ) {
+            int right = 0 + accum;
+            while( right <= 6 ) {
+                tokenList.add( new DominoToken( left, right ) );
+                right++;
+            }
+            accum++;
+        }
+
+        return tokenList;
+    }
+
+
     // This method returns 0 if the state is not final
     // 1 if is final because one player has no tokens
     // 2 if both players have tokens but these don't fit on the board.
@@ -83,11 +84,9 @@ public class State {
         return finalState;
     }
 
-    // TO DO: Maybe this method don't belong here because this class is not from the point of view of the cpu.
     // Returns true if the player1 is the winner.
-    public boolean isWinner() {
+    public boolean isWinner( ) {
         boolean isWinner = false;
-        int finalState = isFinal();
 
         if (    myTokens.isEmpty() ||
                 isFinal() == 2 && ( count( myTokens ) < count( opponentTokens ) ) )

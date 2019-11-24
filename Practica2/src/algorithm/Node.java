@@ -2,8 +2,6 @@ package algorithm;
 
 import structure.State;
 
-import java.util.LinkedList;
-
 public class Node {
 
     private State state;

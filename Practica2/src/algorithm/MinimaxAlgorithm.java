@@ -22,7 +22,7 @@ public class MinimaxAlgorithm {
 
         // Direct cases:
         if( currentNode.getState().isFinal() != 0 ) {
-            if( currentNode.getState().isWinner() )
+            if ( currentNode.getState().isWinner() )
                 result = new Node( currentNode.getState(), Float.MAX_VALUE );
             else result = new Node( currentNode.getState(), -Float.MAX_VALUE );
         }
@@ -40,12 +40,12 @@ public class MinimaxAlgorithm {
 
                 Node newNode = minimax( successor, currentLevel + 1 );
 
-                if( isMax( currentLevel ) )
-                    if( newNode.getHeuristic() > result.getHeuristic() ) {
-                        result = new Node( successor.getState(), newNode.getHeuristic());
-                    }
-                else if( newNode.getHeuristic() < result.getHeuristic() ) {
-                    result = new Node( successor.getState(), newNode.getHeuristic());
+                if( isMax( currentLevel ) ) {
+                    if ( newNode.getHeuristic() > result.getHeuristic() )
+                        result = new Node( successor.getState(), newNode.getHeuristic() );
+
+                    else if ( newNode.getHeuristic() < result.getHeuristic() )
+                        result = new Node( successor.getState(), newNode.getHeuristic() );
                 }
             }
         }
