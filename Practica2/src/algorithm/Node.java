@@ -2,6 +2,8 @@ package algorithm;
 
 import structure.State;
 
+import java.util.LinkedList;
+
 public class Node {
 
     private State state;
@@ -16,15 +18,7 @@ public class Node {
         return heuristic;
     }
 
-    public void setHeuristic( float heuristic ) {
-        this.heuristic = heuristic;
-    }
-
     public State getState() {
         return state;
-    }
-
-    public void setState( State state ) {
-        this.state = state;
     }
 }

@@ -5,6 +5,7 @@ import structure.State;
 public class Heuristic3 implements Heuristic {
     @Override
     public float heuristic( State state ) {
-        return 0;
+        return  state.getPossibleTokens( state.getMyTokens() ).size()
+                - state.getPossibleTokens( state.getOpponentTokens() ).size();
     }
 }

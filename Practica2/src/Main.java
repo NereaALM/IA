@@ -1,7 +1,6 @@
-
-import algorithm.MinimaxAlgorithm;
+import algorithm.*;
 import heuristic.*;
-
+import structure.*;
 import java.util.Scanner;
 
 public class Main {
@@ -12,9 +11,9 @@ public class Main {
     private static Heuristic heuristicMac2;
 
     public static void main( String[] args ) {
-
         gameModeSelector();
     }
+
 
     private static void gameModeSelector() {
 
@@ -29,29 +28,12 @@ public class Main {
 
             // 1. Machine vs Machine
             case 1:
-                System.out.println("Machine vs Machine");
-
-                // Machine 1
-                System.out.println("Machine 1:");
-                heuristicMac1 = heuristicSelector( heuristicMac1 );
-                algorithmSelector( heuristicMac1 );
-
-                System.out.println();
-
-                // Machine 2
-                System.out.println("Machine 2:");
-                heuristicMac2 = heuristicSelector( heuristicMac2 );
-                algorithmSelector( heuristicMac2 );
-
+                gameMachineVsMachine();
                 break;
 
             // 2. Machine vs Person
             case 2:
-                System.out.println("Machine vs Person");
-
-                heuristicMac1 = heuristicSelector( heuristicMac1 );
-                algorithmSelector( heuristicMac1 );
-
+                gameMachineVsPerson();
                 break;
 
             default:
@@ -73,13 +55,11 @@ public class Main {
 
             // Minimax:
             case 1:
-                System.out.println( "Minimax" );
                 MinimaxAlgorithm minimaxAlgorithm = new MinimaxAlgorithm( maxExpLevel, heuristic );
                 break;
 
             // AlphaBeta
             case 2:
-                System.out.println( "Alpha-beta" );
                 break;
 
             default:
@@ -102,20 +82,17 @@ public class Main {
 
             // Heuristic 1
             case 1:
-                System.out.println( "Heuristic 1" );
                 heuristic = new Heuristic1();
                 break;
 
             // Heuristic 2
             case 2:
-                System.out.println( "Heuristic 2" );
                 heuristic = new Heuristic2();
                 break;
 
             // Heuristic 3
             case 3:
-                System.out.println( "Heuristic 3" );
-                heuristic = new Heuristic2();
+                heuristic = new Heuristic3();
                 break;
 
             default:
@@ -124,5 +101,25 @@ public class Main {
         }
 
         return heuristic;
+    }
+
+    private static void gameMachineVsMachine() {
+        // Machine 1
+        heuristicMac1 = heuristicSelector( heuristicMac1 );
+        algorithmSelector( heuristicMac1 );
+        // Machine 2
+        heuristicMac2 = heuristicSelector( heuristicMac2 );
+        algorithmSelector( heuristicMac2 );
+
+        // Set initial state in which lists are filled and board is empty( null ).
+        State iniState = new State();
+        Node iniNode = new Node( iniState, heuristicMac1.heuristic( iniState ) );
+
+    }
+
+    private static void gameMachineVsPerson() {
+        heuristicMac1 = heuristicSelector( heuristicMac1 );
+        algorithmSelector( heuristicMac1 );
+
     }
 }

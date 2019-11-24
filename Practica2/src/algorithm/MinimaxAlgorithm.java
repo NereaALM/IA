@@ -1,6 +1,9 @@
 package algorithm;
 
 import heuristic.Heuristic;
+import structure.State;
+
+import java.util.LinkedList;
 
 public class MinimaxAlgorithm {
 
@@ -12,7 +15,9 @@ public class MinimaxAlgorithm {
         this.heuristic = heuristic;
     }
 
+
     public Node minimax( Node currentNode, int currentLevel ) {
+
         Node result;
 
         // Direct cases:
@@ -22,7 +27,7 @@ public class MinimaxAlgorithm {
             else result = new Node( currentNode.getState(), -Float.MAX_VALUE );
         }
         else if( currentLevel == maxExpLevel )
-            result = new Node( currentNode.getState(), heuristic.heuristic() );
+            result = new Node( currentNode.getState(), heuristic.heuristic( currentNode.getState() ) );
 
         // Recursive case:
         else {
@@ -30,10 +35,11 @@ public class MinimaxAlgorithm {
                 result = new Node( currentNode.getState(), -Float.MAX_VALUE );
             else result = new Node( currentNode.getState(), Float.MAX_VALUE );
 
-            /*
-            while( successorsExist( currentNode ) ) {
-                Node successor = followingSuccessor( currentNode );
+            LinkedList< Node > successorList = getSuccessorList( currentNode );
+            for( Node successor : successorList ) {
+
                 Node newNode = minimax( successor, currentLevel + 1 );
+
                 if( isMax( currentLevel ) )
                     if( newNode.getHeuristic() > result.getHeuristic() ) {
                         result = new Node( successor.getState(), newNode.getHeuristic());
@@ -42,15 +48,26 @@ public class MinimaxAlgorithm {
                     result = new Node( successor.getState(), newNode.getHeuristic());
                 }
             }
-            */
-
         }
 
         return result;
     }
 
+
     // Return true if currentLevel is a pair number.
     private boolean isMax( int currentLevel ) {
         return currentLevel % 2 == 0;
     }
+
+    public LinkedList< Node > getSuccessorList( Node node ) {
+
+        LinkedList< State > successorStates = node.getState().getSuccessorList();
+
+        LinkedList< Node > successorNodes = new LinkedList<>();
+        for( State state : successorStates )
+            successorNodes.add( new Node( state, heuristic.heuristic( state ) ) );
+
+        return successorNodes;
+    }
 }
+

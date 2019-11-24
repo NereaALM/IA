@@ -6,25 +6,27 @@ import java.util.Random;
 public class State {
 
     private DominoToken board;
-    private LinkedList< DominoToken > player1;
-    private LinkedList< DominoToken > player2;
+    private LinkedList< DominoToken > myTokens;
+    private LinkedList< DominoToken > opponentTokens;
+
+    public State( DominoToken board,
+                  LinkedList< DominoToken > myTokens,
+                  LinkedList< DominoToken > opponentTokens ) {
+
+        this.board = board;
+        this.myTokens = myTokens;
+        this.opponentTokens = opponentTokens;
+    }
 
     // Initialization for the beginning of the game.
+    // The board is null and the tokens are distributed randomly.
     public State() {
         board = null;
         distributeTokens();
     }
 
-    public State( DominoToken board,
-                  LinkedList< DominoToken > player1,
-                  LinkedList< DominoToken > player2 ) {
 
-        this.board = board;
-        this.player1 = player1;
-        this.player2 = player2;
-    }
-
-
+    // This method creates a list with the tokens of the game.
     public LinkedList< DominoToken > createTokens() {
 
         LinkedList< DominoToken > tokenList = new LinkedList<>();
@@ -42,25 +44,26 @@ public class State {
         return tokenList;
     }
 
+    // This method fill the lists of the players randomly.
     public void distributeTokens() {
 
-        player1 = new LinkedList<>();
-        player2 = new LinkedList<>();
+        myTokens = new LinkedList<>();
+        opponentTokens = new LinkedList<>();
 
         Random random = new Random();
         LinkedList< DominoToken > tokenList = createTokens();
         for( DominoToken token : tokenList ) {
 
-            if( player1.size() == 14 )
-                player2.add( token );
+            if( myTokens.size() == 14 )
+                opponentTokens.add( token );
 
-            else if( player2.size() == 14 )
-                player1.add( token );
+            else if( opponentTokens.size() == 14 )
+                myTokens.add( token );
 
             else if( random.nextInt() % 2 == 0 )
-                player1.add( token );
+                myTokens.add( token );
 
-            else player2.add( token );
+            else opponentTokens.add( token );
         }
     }
 
@@ -71,15 +74,41 @@ public class State {
 
         int finalState = 0;
 
-        if( player1.isEmpty() || player2.isEmpty() )
+        if( myTokens.isEmpty() || opponentTokens.isEmpty() )
             finalState = 1;
 
-        else if ( getPossibleTokens( player1 ).isEmpty() && getPossibleTokens( player2 ).isEmpty() )
+        else if ( getPossibleTokens( myTokens ).isEmpty() && getPossibleTokens( opponentTokens ).isEmpty() )
             finalState = 2;
 
         return finalState;
     }
 
+    // TO DO: Maybe this method don't belong here because this class is not from the point of view of the cpu.
+    // Returns true if the player1 is the winner.
+    public boolean isWinner() {
+        boolean isWinner = false;
+        int finalState = isFinal();
+
+        if (    myTokens.isEmpty() ||
+                isFinal() == 2 && ( count( myTokens ) < count( opponentTokens ) ) )
+            isWinner = true;
+
+        return isWinner;
+    }
+
+    // This method counts the number of points of a list of tokens.
+    public int count( LinkedList < DominoToken > tokenList ) {
+        int num = 0;
+
+        for( DominoToken token : tokenList ) {
+            num += token.getLeft();
+            num += token.getRight();
+        }
+
+        return num;
+    }
+
+    // This method returns a list with all the tokens that can be used on the board.
     public LinkedList< DominoToken > getPossibleTokens( LinkedList< DominoToken> playerList ) {
         LinkedList< DominoToken > possibleTokenList = new LinkedList<>();
 
@@ -96,32 +125,40 @@ public class State {
         return possibleTokenList;
     }
 
-    public boolean isWinner() {
-        boolean isWinner = false;
-        return false;
+    public LinkedList< State > getSuccessorList() {
+        LinkedList< State > successorList = new LinkedList<>();
+        LinkedList< DominoToken > possibleTokens = getPossibleTokens( myTokens );
+
+        State newState;
+        for( DominoToken token : possibleTokens ) {
+            newState = new State( board, myTokens, opponentTokens );
+            newState.myTokens.remove( token );
+
+            if( board.getRight() == token.getRight() )
+                board.setRight( token.getLeft() );
+            else if( board.getRight() == token.getLeft() )
+                board.setRight( token.getRight() );
+            else if( board.getLeft() == token.getRight() )
+                board.setLeft( token.getLeft() );
+            else if( board.getLeft() == token.getLeft() )
+                board.setLeft( token.getRight() );
+
+            successorList.add( newState );
+        }
+
+        return successorList;
     }
+
 
     public DominoToken getBoard() {
         return board;
     }
 
-    public void setBoard( DominoToken board ) {
-        this.board = board;
+    public LinkedList< DominoToken > getMyTokens() {
+        return myTokens;
     }
 
-    public LinkedList< DominoToken > getPlayer1() {
-        return player1;
-    }
-
-    public void setPlayer1( LinkedList< DominoToken > player1 ) {
-        this.player1 = player1;
-    }
-
-    public LinkedList< DominoToken > getPlayer2() {
-        return player2;
-    }
-
-    public void setPlayer2( LinkedList< DominoToken > player2 ) {
-        this.player2 = player2;
+    public LinkedList< DominoToken > getOpponentTokens() {
+        return opponentTokens;
     }
 }

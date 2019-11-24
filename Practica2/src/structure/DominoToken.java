@@ -20,6 +20,7 @@ public class DominoToken {
                 left == token.right && right == token.left;
     }
 
+
     public int getRight() {
         return right;
     }
