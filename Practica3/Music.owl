@@ -21,9 +21,81 @@
     
 
 
+    <!-- http://www.semanticweb.org/Music#Ballet -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Music#Ballet">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Music#Instrumental"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/Music#Blues -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Music#Blues">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Music#Modern"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/Music#Bossa_Nova -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Music#Bossa_Nova">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Music#Modern"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/Music#Classical -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Music#Classical">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Music#Gender"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/Music#Complex -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Music#Complex">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Music#Form"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/Music#Cumbia -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Music#Cumbia">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Music#Modern"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/Music#Fantasy -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Music#Fantasy">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Music#Instrumental"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/Music#Flute -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Music#Flute">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Music#Wooden"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/Music#Form -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/Music#Form"/>
+    
+
+
+    <!-- http://www.semanticweb.org/Music#Funk -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Music#Funk">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Music#Modern"/>
+    </owl:Class>
     
 
 
@@ -36,7 +108,23 @@
     <!-- http://www.semanticweb.org/Music#Guitar -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/Music#Guitar">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Music#PulsedString"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Music#Pulsed_String"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/Music#Hip_Hop -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Music#Hip_Hop">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Music#Modern"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/Music#Human_Voice -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Music#Human_Voice">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Music#Instrument"/>
     </owl:Class>
     
 
@@ -44,6 +132,30 @@
     <!-- http://www.semanticweb.org/Music#Instrument -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/Music#Instrument"/>
+    
+
+
+    <!-- http://www.semanticweb.org/Music#Instrumental -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Music#Instrumental">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Music#Form"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/Music#Jazz -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Music#Jazz">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Music#Modern"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/Music#Metal -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Music#Metal">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Music#Modern"/>
+    </owl:Class>
     
 
 
@@ -55,9 +167,43 @@
     
 
 
-    <!-- http://www.semanticweb.org/Music#PercussedString -->
+    <!-- http://www.semanticweb.org/Music#Modern -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/Music#PercussedString">
+    <owl:Class rdf:about="http://www.semanticweb.org/Music#Modern">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Music#Gender"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/Music#Nocturne -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Music#Nocturne">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Music#Instrumental"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Music#Simple"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/Music#Oboe -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Music#Oboe">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Music#Flute"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/Music#Opera -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Music#Opera">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Music#Complex"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Music#Vocal"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/Music#Percussed_String -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Music#Percussed_String">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Music#Stringed"/>
     </owl:Class>
     
@@ -74,23 +220,113 @@
     <!-- http://www.semanticweb.org/Music#Piano -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/Music#Piano">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Music#PercussedString"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Music#Percussed_String"/>
     </owl:Class>
     
 
 
-    <!-- http://www.semanticweb.org/Music#PulsedString -->
+    <!-- http://www.semanticweb.org/Music#Pipe_organ -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/Music#PulsedString">
+    <owl:Class rdf:about="http://www.semanticweb.org/Music#Pipe_organ">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Music#Wind"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/Music#Pop -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Music#Pop">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Music#Modern"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/Music#Pulsed_String -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Music#Pulsed_String">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Music#Stringed"/>
     </owl:Class>
     
 
 
-    <!-- http://www.semanticweb.org/Music#RubbedString -->
+    <!-- http://www.semanticweb.org/Music#Punk -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/Music#RubbedString">
+    <owl:Class rdf:about="http://www.semanticweb.org/Music#Punk">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Music#Modern"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/Music#Reagge -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Music#Reagge">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Music#Modern"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/Music#Rock -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Music#Rock">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Music#Modern"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/Music#Rondo -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Music#Rondo">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Music#Instrumental"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Music#Simple"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/Music#Rubbed_String -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Music#Rubbed_String">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Music#Stringed"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/Music#Saxophone -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Music#Saxophone">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Music#Metalic"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/Music#Simple -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Music#Simple">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Music#Form"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/Music#Sonata -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Music#Sonata">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Music#Complex"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Music#Instrumental"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/Music#Song -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Music#Song">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Music#Vocal"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/Music#Soul -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Music#Soul">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Music#Modern"/>
     </owl:Class>
     
 
@@ -103,10 +339,52 @@
     
 
 
+    <!-- http://www.semanticweb.org/Music#Suite -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Music#Suite">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Music#Complex"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Music#Instrumental"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/Music#Symphony -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Music#Symphony">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Music#Complex"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Music#Instrumental"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/Music#Ukelele -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Music#Ukelele">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Music#Pulsed_String"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/Music#Vals -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Music#Vals">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Music#Instrumental"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/Music#Violin -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/Music#Violin">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Music#RubbedString"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Music#Rubbed_String"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/Music#Vocal -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Music#Vocal">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Music#Form"/>
     </owl:Class>
     
 
