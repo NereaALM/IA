@@ -30,6 +30,14 @@
     
 
 
+    <!-- http://www.semanticweb.org/Musical_Instrument#hasKeyboard -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/Musical_Instrument#hasKeyboard">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://www.semanticweb.org/Musical_Instrument#hasResonanceBox -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/Musical_Instrument#hasResonanceBox">
@@ -96,6 +104,12 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/Musical_Instrument#Accordion">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Musical_Instrument#Aerophone"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/Musical_Instrument#hasKeyboard"/>
+                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
@@ -342,6 +356,12 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/Musical_Instrument#Piano">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Musical_Instrument#Chordophone"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/Musical_Instrument#hasKeyboard"/>
+                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.semanticweb.org/Musical_Instrument#hasResonanceBox"/>
