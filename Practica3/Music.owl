@@ -38,6 +38,15 @@
     
 
 
+    <!-- http://www.semanticweb.org/Music#Aerophone -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Music#Aerophone">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Music#Instrument"/>
+        <rdfs:comment>Instruments that produce sound by vibrating columns of air.</rdfs:comment>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/Music#Ballet -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/Music#Ballet">
@@ -54,6 +63,14 @@
     
 
 
+    <!-- http://www.semanticweb.org/Music#Bell -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Music#Bell">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Music#Idiophone"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/Music#Blues -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/Music#Blues">
@@ -66,6 +83,15 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/Music#Bossa_Nova">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Music#Modern"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/Music#Chordophone -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Music#Chordophone">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Music#Instrument"/>
+        <rdfs:comment>Instruments that produce sound by vibrating strings.</rdfs:comment>
     </owl:Class>
     
 
@@ -97,7 +123,16 @@
     <!-- http://www.semanticweb.org/Music#Drums -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/Music#Drums">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Music#Percussive"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Music#Membranophone"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/Music#Electrophone -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Music#Electrophone">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Music#Instrument"/>
+        <rdfs:comment>Instruments that produce sound by electrical means.</rdfs:comment>
     </owl:Class>
     
 
@@ -138,6 +173,22 @@
     
 
 
+    <!-- http://www.semanticweb.org/Music#Glass_Harmonica -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Music#Glass_Harmonica">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Music#Idiophone"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/Music#Glass_Harp -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Music#Glass_Harp">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Music#Idiophone"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/Music#Guitar -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/Music#Guitar">
@@ -157,8 +208,20 @@
     <!-- http://www.semanticweb.org/Music#Human_Voice -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/Music#Human_Voice">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Music#Instrument"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Music#Aerophone"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Music#Chordophone"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Music#Idiophone"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Music#Membranophone"/>
         <rdfs:comment>Instrument that produces sound when air from the lungs vibrates the vocal chords in the throat.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/Music#Idiophone -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Music#Idiophone">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Music#Instrument"/>
+        <rdfs:comment>Instruments that  produce sound by vibrating themselves.</rdfs:comment>
     </owl:Class>
     
 
@@ -187,6 +250,15 @@
     
 
 
+    <!-- http://www.semanticweb.org/Music#Membranophone -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Music#Membranophone">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Music#Instrument"/>
+        <rdfs:comment>Instruments that produce sound by a vibrating membrane.</rdfs:comment>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/Music#Metal -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/Music#Metal">
@@ -198,7 +270,7 @@
     <!-- http://www.semanticweb.org/Music#Metalic -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/Music#Metalic">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Music#Wind"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Music#Aerophone"/>
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/Music#Wooden"/>
         <rdfs:comment>Wind instruments made with metalic materials.</rdfs:comment>
     </owl:Class>
@@ -242,17 +314,8 @@
     <!-- http://www.semanticweb.org/Music#Percussed_String -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/Music#Percussed_String">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Music#Stringed"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Music#Chordophone"/>
         <rdfs:comment>Are those instruments in which the sound is obtained by hitting the strings.</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/Music#Percussive -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/Music#Percussive">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Music#Instrument"/>
-        <rdfs:comment>Musical instrument in which the sound is produced by hitting it.</rdfs:comment>
     </owl:Class>
     
 
@@ -268,7 +331,8 @@
     <!-- http://www.semanticweb.org/Music#Pipe_organ -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/Music#Pipe_organ">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Music#Wind"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Music#Metalic"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Music#Wooden"/>
     </owl:Class>
     
 
@@ -284,7 +348,7 @@
     <!-- http://www.semanticweb.org/Music#Pulsed_String -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/Music#Pulsed_String">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Music#Stringed"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Music#Chordophone"/>
         <rdfs:comment>Are those intruments in which the string vibrates after being pressed or pinched by the fingers.</rdfs:comment>
     </owl:Class>
     
@@ -326,7 +390,7 @@
     <!-- http://www.semanticweb.org/Music#Rubbed_String -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/Music#Rubbed_String">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Music#Stringed"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Music#Chordophone"/>
         <rdfs:comment>Are those instruments in which the sound is obtained through rubbing a bow with the strings.</rdfs:comment>
     </owl:Class>
     
@@ -373,15 +437,6 @@
     
 
 
-    <!-- http://www.semanticweb.org/Music#Stringed -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/Music#Stringed">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Music#Instrument"/>
-        <rdfs:comment>String instruments are musical instruments that produce sounds through the vibrations of one or more strings, usually amplified by means of a sound box.</rdfs:comment>
-    </owl:Class>
-    
-
-
     <!-- http://www.semanticweb.org/Music#Suite -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/Music#Suite">
@@ -396,6 +451,14 @@
     <owl:Class rdf:about="http://www.semanticweb.org/Music#Symphony">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Music#Complex"/>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Music#Instrumental"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/Music#Triangle -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Music#Triangle">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Music#Idiophone"/>
     </owl:Class>
     
 
@@ -432,19 +495,10 @@
     
 
 
-    <!-- http://www.semanticweb.org/Music#Wind -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/Music#Wind">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Music#Instrument"/>
-        <rdfs:comment>In this family of instruments the sound is produced by the vibration of the air inside the instrument.</rdfs:comment>
-    </owl:Class>
-    
-
-
     <!-- http://www.semanticweb.org/Music#Wooden -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/Music#Wooden">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Music#Wind"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Music#Aerophone"/>
         <rdfs:comment>Wind instruments made with wooden materials.</rdfs:comment>
     </owl:Class>
 </rdf:RDF>

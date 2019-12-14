@@ -13,11 +13,90 @@
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/Musical_Instrument#hasCrossHarp -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/Musical_Instrument#hasCrossHarp">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/Musical_Instrument#Wall_Piano"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/Musical_Instrument#hasResonanceBox -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/Musical_Instrument#hasResonanceBox">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/Musical_Instrument#isMadeOfWood -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/Musical_Instrument#isMadeOfWood">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/Musical_Instrument#isMetalic -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/Musical_Instrument#isMetalic">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/Musical_Instrument#isPercussed -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/Musical_Instrument#isPercussed">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/Musical_Instrument#Chordophone"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/Musical_Instrument#isPulsed -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/Musical_Instrument#isPulsed">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/Musical_Instrument#Chordophone"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/Musical_Instrument#isRubbed -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/Musical_Instrument#isRubbed">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/Musical_Instrument#Chordophone"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
     // Classes
     //
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    
+
+
+    <!-- http://www.semanticweb.org/Musical_Instrument#Accordion -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Musical_Instrument#Accordion">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Musical_Instrument#Aerophone"/>
+    </owl:Class>
     
 
 
@@ -96,6 +175,7 @@
     <!-- http://www.semanticweb.org/Musical_Instrument#Drums -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/Musical_Instrument#Drums">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Musical_Instrument#Idiophone"/>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Musical_Instrument#Membranophone"/>
     </owl:Class>
     
@@ -104,7 +184,7 @@
     <!-- http://www.semanticweb.org/Musical_Instrument#Electrophone -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/Musical_Instrument#Electrophone">
-        <rdfs:comment>Instruments that produce sound by electrical means.</rdfs:comment>
+        <rdfs:comment>Instruments that produce sound by electric action or amplification.</rdfs:comment>
     </owl:Class>
     
 
@@ -141,10 +221,32 @@
     
 
 
+    <!-- http://www.semanticweb.org/Musical_Instrument#Grand_Piano -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Musical_Instrument#Grand_Piano">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Musical_Instrument#Piano"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/Musical_Instrument#Guitar -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/Musical_Instrument#Guitar">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Musical_Instrument#Chordophone"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/Musical_Instrument#isPulsed"/>
+                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/Musical_Instrument#Harmonica -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Musical_Instrument#Harmonica">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Musical_Instrument#Aerophone"/>
     </owl:Class>
     
 
@@ -153,6 +255,12 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/Musical_Instrument#Harp">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Musical_Instrument#Chordophone"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/Musical_Instrument#hasResonanceBox"/>
+                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
@@ -211,6 +319,12 @@
     <!-- http://www.semanticweb.org/Musical_Instrument#Membranophone -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/Musical_Instrument#Membranophone">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/Musical_Instrument#hasResonanceBox"/>
+                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:comment>Instruments that produce sound by a vibrating membrane.</rdfs:comment>
     </owl:Class>
     
@@ -228,6 +342,18 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/Musical_Instrument#Piano">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Musical_Instrument#Chordophone"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/Musical_Instrument#hasResonanceBox"/>
+                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/Musical_Instrument#isPercussed"/>
+                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
@@ -236,6 +362,18 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/Musical_Instrument#Pipe_Organ">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Musical_Instrument#Aerophone"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/Musical_Instrument#isMadeOfWood"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/Musical_Instrument#isMetalic"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
@@ -340,7 +478,46 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/Musical_Instrument#Violin">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Musical_Instrument#Chordophone"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/Musical_Instrument#isRubbed"/>
+                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/Musical_Instrument#Wall_Piano -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Musical_Instrument#Wall_Piano">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Musical_Instrument#Piano"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/Musical_Instrument#hasCrossHarp"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointProperties"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/Musical_Instrument#isPercussed"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/Musical_Instrument#isPulsed"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/Musical_Instrument#isRubbed"/>
+        </owl:members>
+    </rdf:Description>
 </rdf:RDF>
 
 
