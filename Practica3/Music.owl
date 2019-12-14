@@ -13,6 +13,23 @@
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/Music#isUsedIn -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/Music#isUsedIn"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
     // Classes
     //
     ///////////////////////////////////////////////////////////////////////////////////////
@@ -25,6 +42,14 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/Music#Ballet">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Music#Instrumental"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/Music#Bass -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Music#Bass">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Music#Pulsed_String"/>
     </owl:Class>
     
 
@@ -65,6 +90,14 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/Music#Cumbia">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Music#Modern"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/Music#Drums -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Music#Drums">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Music#Percussive"/>
     </owl:Class>
     
 
@@ -125,13 +158,16 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/Music#Human_Voice">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Music#Instrument"/>
+        <rdfs:comment>Instrument that produces sound when air from the lungs vibrates the vocal chords in the throat.</rdfs:comment>
     </owl:Class>
     
 
 
     <!-- http://www.semanticweb.org/Music#Instrument -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/Music#Instrument"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/Music#Instrument">
+        <rdfs:comment>A musical instrument is an object composed of the combination of one or more resonant systems and the means for its vibration, constructed in order to produce sound in one or more tones that can be combined by an interpreter to produce music.</rdfs:comment>
+    </owl:Class>
     
 
 
@@ -163,6 +199,8 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/Music#Metalic">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Music#Wind"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/Music#Wooden"/>
+        <rdfs:comment>Wind instruments made with metalic materials.</rdfs:comment>
     </owl:Class>
     
 
@@ -187,7 +225,7 @@
     <!-- http://www.semanticweb.org/Music#Oboe -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/Music#Oboe">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Music#Flute"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Music#Wooden"/>
     </owl:Class>
     
 
@@ -205,6 +243,7 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/Music#Percussed_String">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Music#Stringed"/>
+        <rdfs:comment>Are those instruments in which the sound is obtained by hitting the strings.</rdfs:comment>
     </owl:Class>
     
 
@@ -213,6 +252,7 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/Music#Percussive">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Music#Instrument"/>
+        <rdfs:comment>Musical instrument in which the sound is produced by hitting it.</rdfs:comment>
     </owl:Class>
     
 
@@ -245,6 +285,7 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/Music#Pulsed_String">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Music#Stringed"/>
+        <rdfs:comment>Are those intruments in which the string vibrates after being pressed or pinched by the fingers.</rdfs:comment>
     </owl:Class>
     
 
@@ -286,6 +327,7 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/Music#Rubbed_String">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Music#Stringed"/>
+        <rdfs:comment>Are those instruments in which the sound is obtained through rubbing a bow with the strings.</rdfs:comment>
     </owl:Class>
     
 
@@ -335,6 +377,7 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/Music#Stringed">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Music#Instrument"/>
+        <rdfs:comment>String instruments are musical instruments that produce sounds through the vibrations of one or more strings, usually amplified by means of a sound box.</rdfs:comment>
     </owl:Class>
     
 
@@ -393,6 +436,7 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/Music#Wind">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Music#Instrument"/>
+        <rdfs:comment>In this family of instruments the sound is produced by the vibration of the air inside the instrument.</rdfs:comment>
     </owl:Class>
     
 
@@ -401,6 +445,7 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/Music#Wooden">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Music#Wind"/>
+        <rdfs:comment>Wind instruments made with wooden materials.</rdfs:comment>
     </owl:Class>
 </rdf:RDF>
 

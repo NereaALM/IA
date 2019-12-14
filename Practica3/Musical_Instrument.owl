@@ -1,0 +1,349 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/Musical_Instrument#"
+     xml:base="http://www.semanticweb.org/Musical_Instrument"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/Musical_Instrument"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/Musical_Instrument#Aerophone -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Musical_Instrument#Aerophone">
+        <rdfs:comment>Instruments that produce sound by vibrating columns of air.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/Musical_Instrument#Bass -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Musical_Instrument#Bass">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Musical_Instrument#Chordophone"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/Musical_Instrument#Bass_Drum -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Musical_Instrument#Bass_Drum">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Musical_Instrument#Drums"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/Musical_Instrument#Bell -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Musical_Instrument#Bell">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Musical_Instrument#Idiophone"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/Musical_Instrument#Cello -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Musical_Instrument#Cello">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Musical_Instrument#Chordophone"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/Musical_Instrument#Chordophone -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Musical_Instrument#Chordophone">
+        <rdfs:comment>Instruments that produce sound by vibrating strings.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/Musical_Instrument#Crash -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Musical_Instrument#Crash">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Musical_Instrument#Cymbal"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/Musical_Instrument#Cymbal -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Musical_Instrument#Cymbal">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Musical_Instrument#Drums"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/Musical_Instrument#Double_Bass -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Musical_Instrument#Double_Bass">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Musical_Instrument#Chordophone"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/Musical_Instrument#Drums -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Musical_Instrument#Drums">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Musical_Instrument#Membranophone"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/Musical_Instrument#Electrophone -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Musical_Instrument#Electrophone">
+        <rdfs:comment>Instruments that produce sound by electrical means.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/Musical_Instrument#Floor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Musical_Instrument#Floor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Musical_Instrument#Tom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/Musical_Instrument#Flute -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Musical_Instrument#Flute">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Musical_Instrument#Aerophone"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/Musical_Instrument#Glass_Harmonica -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Musical_Instrument#Glass_Harmonica">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Musical_Instrument#Idiophone"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/Musical_Instrument#Glass_Harp -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Musical_Instrument#Glass_Harp">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Musical_Instrument#Idiophone"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/Musical_Instrument#Guitar -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Musical_Instrument#Guitar">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Musical_Instrument#Chordophone"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/Musical_Instrument#Harp -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Musical_Instrument#Harp">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Musical_Instrument#Chordophone"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/Musical_Instrument#Hit_Hat -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Musical_Instrument#Hit_Hat">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Musical_Instrument#Drums"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/Musical_Instrument#Human_Voice -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Musical_Instrument#Human_Voice">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Musical_Instrument#Aerophone"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Musical_Instrument#Chordophone"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Musical_Instrument#Idiophone"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Musical_Instrument#Membranophone"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/Musical_Instrument#Hurdy_Gurdy -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Musical_Instrument#Hurdy_Gurdy">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Musical_Instrument#Chordophone"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/Musical_Instrument#Idiophone -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Musical_Instrument#Idiophone">
+        <rdfs:comment>Instruments that produce sound by vibrating themselves.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/Musical_Instrument#Lira -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Musical_Instrument#Lira">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Musical_Instrument#Chordophone"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/Musical_Instrument#Lute -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Musical_Instrument#Lute">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Musical_Instrument#Chordophone"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/Musical_Instrument#Membranophone -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Musical_Instrument#Membranophone">
+        <rdfs:comment>Instruments that produce sound by a vibrating membrane.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/Musical_Instrument#Oboe -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Musical_Instrument#Oboe">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Musical_Instrument#Aerophone"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/Musical_Instrument#Piano -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Musical_Instrument#Piano">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Musical_Instrument#Chordophone"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/Musical_Instrument#Pipe_Organ -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Musical_Instrument#Pipe_Organ">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Musical_Instrument#Aerophone"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/Musical_Instrument#Rack -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Musical_Instrument#Rack">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Musical_Instrument#Tom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/Musical_Instrument#Ride -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Musical_Instrument#Ride">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Musical_Instrument#Cymbal"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/Musical_Instrument#Saxophone -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Musical_Instrument#Saxophone">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Musical_Instrument#Aerophone"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/Musical_Instrument#Snare_Drum -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Musical_Instrument#Snare_Drum">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Musical_Instrument#Drums"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/Musical_Instrument#Splash -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Musical_Instrument#Splash">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Musical_Instrument#Cymbal"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/Musical_Instrument#Theremin -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Musical_Instrument#Theremin">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Musical_Instrument#Electrophone"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/Musical_Instrument#Tom -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Musical_Instrument#Tom">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Musical_Instrument#Drums"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/Musical_Instrument#Triangle -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Musical_Instrument#Triangle">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Musical_Instrument#Idiophone"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/Musical_Instrument#Trumpet -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Musical_Instrument#Trumpet">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Musical_Instrument#Aerophone"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/Musical_Instrument#Tuba -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Musical_Instrument#Tuba">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Musical_Instrument#Aerophone"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/Musical_Instrument#Ukelele -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Musical_Instrument#Ukelele">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Musical_Instrument#Chordophone"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/Musical_Instrument#Viola -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Musical_Instrument#Viola">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Musical_Instrument#Chordophone"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/Musical_Instrument#Violin -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Musical_Instrument#Violin">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Musical_Instrument#Chordophone"/>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
