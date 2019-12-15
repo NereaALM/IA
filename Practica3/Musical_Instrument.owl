@@ -1,544 +1,587 @@
 <?xml version="1.0"?>
-<rdf:RDF xmlns="http://www.semanticweb.org/Musical_Instrument#"
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
      xml:base="http://www.semanticweb.org/Musical_Instrument"
-     xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
-    <owl:Ontology rdf:about="http://www.semanticweb.org/Musical_Instrument"/>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Data properties
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- http://www.semanticweb.org/Musical_Instrument#hasCrossHarp -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/Musical_Instrument#hasCrossHarp">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/Musical_Instrument#Wall_Piano"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/Musical_Instrument#hasKeyboard -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/Musical_Instrument#hasKeyboard">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/Musical_Instrument#hasResonanceBox -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/Musical_Instrument#hasResonanceBox">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/Musical_Instrument#isMadeOfWood -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/Musical_Instrument#isMadeOfWood">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/Musical_Instrument#isMetalic -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/Musical_Instrument#isMetalic">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/Musical_Instrument#isPercussed -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/Musical_Instrument#isPercussed">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/Musical_Instrument#Chordophone"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/Musical_Instrument#isPulsed -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/Musical_Instrument#isPulsed">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/Musical_Instrument#Chordophone"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/Musical_Instrument#isRubbed -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/Musical_Instrument#isRubbed">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/Musical_Instrument#Chordophone"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Classes
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- http://www.semanticweb.org/Musical_Instrument#Accordion -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/Musical_Instrument#Accordion">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Musical_Instrument#Aerophone"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/Musical_Instrument#hasKeyboard"/>
-                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:hasValue>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/Musical_Instrument#Aerophone -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/Musical_Instrument#Aerophone">
-        <rdfs:comment>Instruments that produce sound by vibrating columns of air.</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/Musical_Instrument#Bass -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/Musical_Instrument#Bass">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Musical_Instrument#Chordophone"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/Musical_Instrument#Bass_Drum -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/Musical_Instrument#Bass_Drum">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Musical_Instrument#Drums"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/Musical_Instrument#Bell -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/Musical_Instrument#Bell">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Musical_Instrument#Idiophone"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/Musical_Instrument#Cello -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/Musical_Instrument#Cello">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Musical_Instrument#Chordophone"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/Musical_Instrument#Chordophone -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/Musical_Instrument#Chordophone">
-        <rdfs:comment>Instruments that produce sound by vibrating strings.</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/Musical_Instrument#Crash -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/Musical_Instrument#Crash">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Musical_Instrument#Cymbal"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/Musical_Instrument#Cymbal -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/Musical_Instrument#Cymbal">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Musical_Instrument#Drums"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/Musical_Instrument#Double_Bass -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/Musical_Instrument#Double_Bass">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Musical_Instrument#Chordophone"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/Musical_Instrument#Drums -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/Musical_Instrument#Drums">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Musical_Instrument#Idiophone"/>
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Musical_Instrument#Membranophone"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/Musical_Instrument#Electrophone -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/Musical_Instrument#Electrophone">
-        <rdfs:comment>Instruments that produce sound by electric action or amplification.</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/Musical_Instrument#Floor -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/Musical_Instrument#Floor">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Musical_Instrument#Tom"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/Musical_Instrument#Flute -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/Musical_Instrument#Flute">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Musical_Instrument#Aerophone"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/Musical_Instrument#Glass_Harmonica -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/Musical_Instrument#Glass_Harmonica">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Musical_Instrument#Idiophone"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/Musical_Instrument#Glass_Harp -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/Musical_Instrument#Glass_Harp">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Musical_Instrument#Idiophone"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/Musical_Instrument#Grand_Piano -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/Musical_Instrument#Grand_Piano">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Musical_Instrument#Piano"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/Musical_Instrument#Guitar -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/Musical_Instrument#Guitar">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Musical_Instrument#Chordophone"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/Musical_Instrument#isPulsed"/>
-                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:hasValue>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/Musical_Instrument#Harmonica -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/Musical_Instrument#Harmonica">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Musical_Instrument#Aerophone"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/Musical_Instrument#Harp -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/Musical_Instrument#Harp">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Musical_Instrument#Chordophone"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/Musical_Instrument#hasResonanceBox"/>
-                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</owl:hasValue>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/Musical_Instrument#Hit_Hat -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/Musical_Instrument#Hit_Hat">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Musical_Instrument#Drums"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/Musical_Instrument#Human_Voice -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/Musical_Instrument#Human_Voice">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Musical_Instrument#Aerophone"/>
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Musical_Instrument#Chordophone"/>
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Musical_Instrument#Idiophone"/>
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Musical_Instrument#Membranophone"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/Musical_Instrument#Hurdy_Gurdy -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/Musical_Instrument#Hurdy_Gurdy">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Musical_Instrument#Chordophone"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/Musical_Instrument#Idiophone -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/Musical_Instrument#Idiophone">
-        <rdfs:comment>Instruments that produce sound by vibrating themselves.</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/Musical_Instrument#Lira -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/Musical_Instrument#Lira">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Musical_Instrument#Chordophone"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/Musical_Instrument#Lute -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/Musical_Instrument#Lute">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Musical_Instrument#Chordophone"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/Musical_Instrument#Membranophone -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/Musical_Instrument#Membranophone">
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/Musical_Instrument#hasResonanceBox"/>
-                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:hasValue>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:comment>Instruments that produce sound by a vibrating membrane.</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/Musical_Instrument#Oboe -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/Musical_Instrument#Oboe">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Musical_Instrument#Aerophone"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/Musical_Instrument#Piano -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/Musical_Instrument#Piano">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Musical_Instrument#Chordophone"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/Musical_Instrument#hasKeyboard"/>
-                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:hasValue>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/Musical_Instrument#hasResonanceBox"/>
-                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:hasValue>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/Musical_Instrument#isPercussed"/>
-                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:hasValue>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/Musical_Instrument#Pipe_Organ -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/Musical_Instrument#Pipe_Organ">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Musical_Instrument#Aerophone"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/Musical_Instrument#isMadeOfWood"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/Musical_Instrument#isMetalic"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/Musical_Instrument#Rack -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/Musical_Instrument#Rack">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Musical_Instrument#Tom"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/Musical_Instrument#Ride -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/Musical_Instrument#Ride">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Musical_Instrument#Cymbal"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/Musical_Instrument#Saxophone -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/Musical_Instrument#Saxophone">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Musical_Instrument#Aerophone"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/Musical_Instrument#Snare_Drum -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/Musical_Instrument#Snare_Drum">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Musical_Instrument#Drums"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/Musical_Instrument#Splash -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/Musical_Instrument#Splash">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Musical_Instrument#Cymbal"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/Musical_Instrument#Theremin -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/Musical_Instrument#Theremin">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Musical_Instrument#Electrophone"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/Musical_Instrument#Tom -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/Musical_Instrument#Tom">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Musical_Instrument#Drums"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/Musical_Instrument#Triangle -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/Musical_Instrument#Triangle">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Musical_Instrument#Idiophone"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/Musical_Instrument#Trumpet -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/Musical_Instrument#Trumpet">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Musical_Instrument#Aerophone"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/Musical_Instrument#Tuba -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/Musical_Instrument#Tuba">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Musical_Instrument#Aerophone"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/Musical_Instrument#Ukelele -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/Musical_Instrument#Ukelele">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Musical_Instrument#Chordophone"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/Musical_Instrument#Viola -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/Musical_Instrument#Viola">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Musical_Instrument#Chordophone"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/Musical_Instrument#Violin -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/Musical_Instrument#Violin">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Musical_Instrument#Chordophone"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/Musical_Instrument#isRubbed"/>
-                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:hasValue>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/Musical_Instrument#Wall_Piano -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/Musical_Instrument#Wall_Piano">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Musical_Instrument#Piano"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/Musical_Instrument#hasCrossHarp"/>
-                <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-    </owl:Class>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // General axioms
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    <rdf:Description>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointProperties"/>
-        <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.semanticweb.org/Musical_Instrument#isPercussed"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/Musical_Instrument#isPulsed"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/Musical_Instrument#isRubbed"/>
-        </owl:members>
-    </rdf:Description>
-</rdf:RDF>
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.semanticweb.org/Musical_Instrument">
+    <Prefix name="" IRI="http://www.semanticweb.org/Musical_Instrument#"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Declaration>
+        <Class IRI="#Accordion"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Aerophone"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Bass"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Bass_Drum"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Bell"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Cello"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Chordophone"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Crash"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Cymbal"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Double_Bass"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Drums"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Electrophone"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Floor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Flute"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Glass_Harmonica"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Glass_Harp"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Grand_Piano"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Guitar"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Harmonica"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Harp"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Hi_Hat"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Human_Voice"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Hurdy_Gurdy"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Idiophone"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Lira"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Lute"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Membranophone"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Oboe"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Piano"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Pipe_Organ"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Rack"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Ride"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Saxophone"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Snare_Drum"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Splash"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Theremin"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Tom"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Triangle"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Trumpet"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Tuba"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Ukelele"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Viola"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Violin"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Wall_Piano"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasDifferentSound"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasDifferentTechnique"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasSimilarSound"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasSimilarTechnique"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isAlsoUsedWith"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isNewerThan"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isOlderThan"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isPrimarlyUsedWith"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isUsedWith"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasCrossHarp"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasKeyboard"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasResonanceBox"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#isMadeOfWood"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#isMetalic"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#isPercussed"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#isPulsed"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#isRubbed"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="#Accordion"/>
+        <Class IRI="#Aerophone"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Accordion"/>
+        <DataHasValue>
+            <DataProperty IRI="#hasKeyboard"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+        </DataHasValue>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Bass"/>
+        <Class IRI="#Chordophone"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Bass_Drum"/>
+        <Class IRI="#Drums"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Bell"/>
+        <Class IRI="#Idiophone"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Cello"/>
+        <Class IRI="#Chordophone"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Crash"/>
+        <Class IRI="#Cymbal"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Cymbal"/>
+        <Class IRI="#Idiophone"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Double_Bass"/>
+        <Class IRI="#Chordophone"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Drums"/>
+        <Class IRI="#Membranophone"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Floor"/>
+        <Class IRI="#Tom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Flute"/>
+        <Class IRI="#Aerophone"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Glass_Harmonica"/>
+        <Class IRI="#Idiophone"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Glass_Harp"/>
+        <Class IRI="#Idiophone"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Grand_Piano"/>
+        <Class IRI="#Piano"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Guitar"/>
+        <Class IRI="#Chordophone"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Guitar"/>
+        <DataHasValue>
+            <DataProperty IRI="#isPulsed"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+        </DataHasValue>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Harmonica"/>
+        <Class IRI="#Aerophone"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Harp"/>
+        <Class IRI="#Chordophone"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Harp"/>
+        <DataHasValue>
+            <DataProperty IRI="#hasResonanceBox"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">false</Literal>
+        </DataHasValue>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Hi_Hat"/>
+        <Class IRI="#Idiophone"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Human_Voice"/>
+        <Class IRI="#Aerophone"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Human_Voice"/>
+        <Class IRI="#Chordophone"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Human_Voice"/>
+        <Class IRI="#Idiophone"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Human_Voice"/>
+        <Class IRI="#Membranophone"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Hurdy_Gurdy"/>
+        <Class IRI="#Chordophone"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Lira"/>
+        <Class IRI="#Chordophone"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Lute"/>
+        <Class IRI="#Chordophone"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Membranophone"/>
+        <DataHasValue>
+            <DataProperty IRI="#hasResonanceBox"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+        </DataHasValue>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Oboe"/>
+        <Class IRI="#Aerophone"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Piano"/>
+        <Class IRI="#Chordophone"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Piano"/>
+        <DataHasValue>
+            <DataProperty IRI="#hasKeyboard"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+        </DataHasValue>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Piano"/>
+        <DataHasValue>
+            <DataProperty IRI="#hasResonanceBox"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+        </DataHasValue>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Piano"/>
+        <DataHasValue>
+            <DataProperty IRI="#isPercussed"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+        </DataHasValue>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Pipe_Organ"/>
+        <Class IRI="#Aerophone"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Pipe_Organ"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#isMadeOfWood"/>
+            <Datatype abbreviatedIRI="xsd:boolean"/>
+        </DataSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Pipe_Organ"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#isMetalic"/>
+            <Datatype abbreviatedIRI="xsd:boolean"/>
+        </DataSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Pipe_Organ"/>
+        <DataHasValue>
+            <DataProperty IRI="#hasKeyboard"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+        </DataHasValue>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Rack"/>
+        <Class IRI="#Tom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Ride"/>
+        <Class IRI="#Cymbal"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Saxophone"/>
+        <Class IRI="#Aerophone"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Snare_Drum"/>
+        <Class IRI="#Drums"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Splash"/>
+        <Class IRI="#Cymbal"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Theremin"/>
+        <Class IRI="#Electrophone"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Tom"/>
+        <Class IRI="#Drums"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Triangle"/>
+        <Class IRI="#Idiophone"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Trumpet"/>
+        <Class IRI="#Aerophone"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Tuba"/>
+        <Class IRI="#Aerophone"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Ukelele"/>
+        <Class IRI="#Chordophone"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Viola"/>
+        <Class IRI="#Chordophone"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Violin"/>
+        <Class IRI="#Chordophone"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Violin"/>
+        <DataHasValue>
+            <DataProperty IRI="#isRubbed"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+        </DataHasValue>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Wall_Piano"/>
+        <Class IRI="#Piano"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Wall_Piano"/>
+        <DataAllValuesFrom>
+            <DataProperty IRI="#hasCrossHarp"/>
+            <Datatype abbreviatedIRI="xsd:boolean"/>
+        </DataAllValuesFrom>
+    </SubClassOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isAlsoUsedWith"/>
+        <ObjectProperty IRI="#isUsedWith"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isNewerThan"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isPrimarlyUsedWith"/>
+        <ObjectProperty IRI="#isUsedWith"/>
+    </SubObjectPropertyOf>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#isNewerThan"/>
+        <ObjectProperty IRI="#isOlderThan"/>
+    </InverseObjectProperties>
+    <SymmetricObjectProperty>
+        <ObjectProperty IRI="#hasDifferentSound"/>
+    </SymmetricObjectProperty>
+    <SymmetricObjectProperty>
+        <ObjectProperty IRI="#hasDifferentTechnique"/>
+    </SymmetricObjectProperty>
+    <SymmetricObjectProperty>
+        <ObjectProperty IRI="#hasSimilarSound"/>
+    </SymmetricObjectProperty>
+    <SymmetricObjectProperty>
+        <ObjectProperty IRI="#hasSimilarTechnique"/>
+    </SymmetricObjectProperty>
+    <SymmetricObjectProperty>
+        <ObjectProperty IRI="#isAlsoUsedWith"/>
+    </SymmetricObjectProperty>
+    <SymmetricObjectProperty>
+        <ObjectProperty IRI="#isPrimarlyUsedWith"/>
+    </SymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#isNewerThan"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#isOlderThan"/>
+    </AsymmetricObjectProperty>
+    <TransitiveObjectProperty>
+        <ObjectProperty IRI="#isNewerThan"/>
+    </TransitiveObjectProperty>
+    <TransitiveObjectProperty>
+        <ObjectProperty IRI="#isOlderThan"/>
+    </TransitiveObjectProperty>
+    <ReflexiveObjectProperty>
+        <ObjectProperty IRI="#isAlsoUsedWith"/>
+    </ReflexiveObjectProperty>
+    <ReflexiveObjectProperty>
+        <ObjectProperty IRI="#isPrimarlyUsedWith"/>
+    </ReflexiveObjectProperty>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasCrossHarp"/>
+        <Class IRI="#Wall_Piano"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#isPercussed"/>
+        <Class IRI="#Chordophone"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#isPulsed"/>
+        <Class IRI="#Chordophone"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#isRubbed"/>
+        <Class IRI="#Chordophone"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasCrossHarp"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasKeyboard"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasResonanceBox"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#isMadeOfWood"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#isMetalic"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#isPercussed"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#isPulsed"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#isRubbed"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DisjointDataProperties>
+        <DataProperty IRI="#isMadeOfWood"/>
+        <DataProperty IRI="#isMetalic"/>
+    </DisjointDataProperties>
+    <DisjointDataProperties>
+        <DataProperty IRI="#isPercussed"/>
+        <DataProperty IRI="#isPulsed"/>
+        <DataProperty IRI="#isRubbed"/>
+    </DisjointDataProperties>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Aerophone</IRI>
+        <Literal>Instruments that produce sound by vibrating columns of air.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Chordophone</IRI>
+        <Literal>Instruments that produce sound by vibrating strings.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Electrophone</IRI>
+        <Literal>Instruments that produce sound by electric action or amplification.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Idiophone</IRI>
+        <Literal>Instruments that produce sound by vibrating themselves.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Membranophone</IRI>
+        <Literal>Instruments that produce sound by a vibrating membrane.</Literal>
+    </AnnotationAssertion>
+</Ontology>
 
 
 
