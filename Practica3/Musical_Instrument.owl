@@ -6,7 +6,7 @@
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      ontologyIRI="http://www.semanticweb.org/Musical_Instrument">
-    <Prefix name="" IRI="http://www.semanticweb.org/Musical_Instrument#"/>
+    <Prefix name="" IRI="http://www.semanticweb.org/Musical_Instrument"/>
     <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
     <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
     <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
@@ -85,10 +85,10 @@
         <Class IRI="#Idiophone"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Lira"/>
+        <Class IRI="#Lute"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Lute"/>
+        <Class IRI="#Lyre"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Membranophone"/>
@@ -118,10 +118,16 @@
         <Class IRI="#Splash"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#Sweet_Flute"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Theremin"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Tom"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Transverse_Flute"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Triangle"/>
@@ -151,6 +157,12 @@
         <ObjectProperty IRI="#hasDifferentTechnique"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#hasMoreBass"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasMoreTreble"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#hasSimilarSound"/>
     </Declaration>
     <Declaration>
@@ -175,6 +187,9 @@
         <DataProperty IRI="#hasCrossHarp"/>
     </Declaration>
     <Declaration>
+        <DataProperty IRI="#hasDirectionalSound"/>
+    </Declaration>
+    <Declaration>
         <DataProperty IRI="#hasKeyboard"/>
     </Declaration>
     <Declaration>
@@ -195,6 +210,30 @@
     <Declaration>
         <DataProperty IRI="#isRubbed"/>
     </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Chopin_Piano"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Christopher_Wolstenholme_Bass"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Etta_James_Voice"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Freddie_Mercury_Voice"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Jimi_Hendrix_Guitar"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#My_Triangle"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Roger_Waters_Voice"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Royal_Palace_Stradivarius"/>
+    </Declaration>
     <SubClassOf>
         <Class IRI="#Accordion"/>
         <Class IRI="#Aerophone"/>
@@ -209,6 +248,13 @@
     <SubClassOf>
         <Class IRI="#Bass"/>
         <Class IRI="#Chordophone"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Bass"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#hasMoreBass"/>
+            <Class IRI="#Guitar"/>
+        </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Bass_Drum"/>
@@ -264,6 +310,27 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Guitar"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasSimilarTechnique"/>
+            <Class IRI="#Bass"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Guitar"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#hasMoreTreble"/>
+            <Class IRI="#Bass"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Guitar"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#hasResonanceBox"/>
+            <Datatype abbreviatedIRI="xsd:boolean"/>
+        </DataSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Guitar"/>
         <DataHasValue>
             <DataProperty IRI="#isPulsed"/>
             <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
@@ -286,7 +353,7 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Hi_Hat"/>
-        <Class IRI="#Idiophone"/>
+        <Class IRI="#Cymbal"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Human_Voice"/>
@@ -305,16 +372,37 @@
         <Class IRI="#Membranophone"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Hurdy_Gurdy"/>
-        <Class IRI="#Chordophone"/>
+        <Class IRI="#Human_Voice"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#isOlderThan"/>
+            <Class IRI="#Drums"/>
+        </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Lira"/>
+        <Class IRI="#Hurdy_Gurdy"/>
         <Class IRI="#Chordophone"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Lute"/>
         <Class IRI="#Chordophone"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Lyre"/>
+        <Class IRI="#Chordophone"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Lyre"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasSimilarTechnique"/>
+            <Class IRI="#Harp"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Lyre"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#isOlderThan"/>
+            <Class IRI="#Bass"/>
+        </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Membranophone"/>
@@ -358,6 +446,13 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Pipe_Organ"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#hasSimilarTechnique"/>
+            <Class IRI="#Piano"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Pipe_Organ"/>
         <DataSomeValuesFrom>
             <DataProperty IRI="#isMadeOfWood"/>
             <Datatype abbreviatedIRI="xsd:boolean"/>
@@ -390,12 +485,58 @@
         <Class IRI="#Aerophone"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Saxophone"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#isNewerThan"/>
+            <Class IRI="#Piano"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Saxophone"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#hasDifferentTechnique"/>
+            <Class IRI="#Harp"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Saxophone"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#hasMoreBass"/>
+            <Class IRI="#Trumpet"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Saxophone"/>
+        <DataHasValue>
+            <DataProperty IRI="#isMetalic"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+        </DataHasValue>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Snare_Drum"/>
         <Class IRI="#Drums"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Splash"/>
         <Class IRI="#Cymbal"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Sweet_Flute"/>
+        <Class IRI="#Flute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Sweet_Flute"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#hasDifferentSound"/>
+            <Class IRI="#Saxophone"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Sweet_Flute"/>
+        <DataHasValue>
+            <DataProperty IRI="#isMadeOfWood"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+        </DataHasValue>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Theremin"/>
@@ -406,6 +547,10 @@
         <Class IRI="#Drums"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Transverse_Flute"/>
+        <Class IRI="#Flute"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Triangle"/>
         <Class IRI="#Idiophone"/>
     </SubClassOf>
@@ -414,8 +559,36 @@
         <Class IRI="#Aerophone"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Trumpet"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasMoreTreble"/>
+            <Class IRI="#Tuba"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Tuba"/>
         <Class IRI="#Aerophone"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Tuba"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasMoreBass"/>
+            <Class IRI="#Saxophone"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Tuba"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasMoreBass"/>
+            <Class IRI="#Trumpet"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Tuba"/>
+        <DataHasValue>
+            <DataProperty IRI="#isMetalic"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+        </DataHasValue>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Ukelele"/>
@@ -426,8 +599,29 @@
         <Class IRI="#Chordophone"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Viola"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#hasMoreBass"/>
+            <Class IRI="#Violin"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Viola"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#hasSimilarSound"/>
+            <Class IRI="#Cello"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Violin"/>
         <Class IRI="#Chordophone"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Violin"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasMoreTreble"/>
+            <Class IRI="#Viola"/>
+        </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Violin"/>
@@ -442,11 +636,48 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Wall_Piano"/>
-        <DataAllValuesFrom>
+        <DataSomeValuesFrom>
             <DataProperty IRI="#hasCrossHarp"/>
             <Datatype abbreviatedIRI="xsd:boolean"/>
-        </DataAllValuesFrom>
+        </DataSomeValuesFrom>
     </SubClassOf>
+    <ClassAssertion>
+        <Class IRI="#Grand_Piano"/>
+        <NamedIndividual IRI="#Chopin_Piano"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Bass"/>
+        <NamedIndividual IRI="#Christopher_Wolstenholme_Bass"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Human_Voice"/>
+        <NamedIndividual IRI="#Etta_James_Voice"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Human_Voice"/>
+        <NamedIndividual IRI="#Freddie_Mercury_Voice"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Guitar"/>
+        <NamedIndividual IRI="#Jimi_Hendrix_Guitar"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Triangle"/>
+        <NamedIndividual IRI="#My_Triangle"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Human_Voice"/>
+        <NamedIndividual IRI="#Roger_Waters_Voice"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Violin"/>
+        <NamedIndividual IRI="#Royal_Palace_Stradivarius"/>
+    </ClassAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasResonanceBox"/>
+        <NamedIndividual IRI="#Jimi_Hendrix_Guitar"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#isAlsoUsedWith"/>
         <ObjectProperty IRI="#isUsedWith"/>
@@ -459,6 +690,10 @@
         <ObjectProperty IRI="#isPrimarlyUsedWith"/>
         <ObjectProperty IRI="#isUsedWith"/>
     </SubObjectPropertyOf>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasMoreBass"/>
+        <ObjectProperty IRI="#hasMoreTreble"/>
+    </InverseObjectProperties>
     <InverseObjectProperties>
         <ObjectProperty IRI="#isNewerThan"/>
         <ObjectProperty IRI="#isOlderThan"/>
@@ -481,6 +716,9 @@
     <SymmetricObjectProperty>
         <ObjectProperty IRI="#isPrimarlyUsedWith"/>
     </SymmetricObjectProperty>
+    <SymmetricObjectProperty>
+        <ObjectProperty IRI="#isUsedWith"/>
+    </SymmetricObjectProperty>
     <AsymmetricObjectProperty>
         <ObjectProperty IRI="#isNewerThan"/>
     </AsymmetricObjectProperty>
@@ -488,20 +726,39 @@
         <ObjectProperty IRI="#isOlderThan"/>
     </AsymmetricObjectProperty>
     <TransitiveObjectProperty>
-        <ObjectProperty IRI="#isNewerThan"/>
+        <ObjectProperty IRI="#hasMoreBass"/>
     </TransitiveObjectProperty>
     <TransitiveObjectProperty>
-        <ObjectProperty IRI="#isOlderThan"/>
+        <ObjectProperty IRI="#hasMoreTreble"/>
     </TransitiveObjectProperty>
-    <ReflexiveObjectProperty>
+    <TransitiveObjectProperty>
+        <ObjectProperty IRI="#hasSimilarSound"/>
+    </TransitiveObjectProperty>
+    <TransitiveObjectProperty>
+        <ObjectProperty IRI="#hasSimilarTechnique"/>
+    </TransitiveObjectProperty>
+    <TransitiveObjectProperty>
         <ObjectProperty IRI="#isAlsoUsedWith"/>
-    </ReflexiveObjectProperty>
-    <ReflexiveObjectProperty>
+    </TransitiveObjectProperty>
+    <TransitiveObjectProperty>
+        <ObjectProperty IRI="#isNewerThan"/>
+    </TransitiveObjectProperty>
+    <TransitiveObjectProperty>
+        <ObjectProperty IRI="#isOlderThan"/>
+    </TransitiveObjectProperty>
+    <TransitiveObjectProperty>
         <ObjectProperty IRI="#isPrimarlyUsedWith"/>
-    </ReflexiveObjectProperty>
+    </TransitiveObjectProperty>
+    <TransitiveObjectProperty>
+        <ObjectProperty IRI="#isUsedWith"/>
+    </TransitiveObjectProperty>
     <DataPropertyDomain>
         <DataProperty IRI="#hasCrossHarp"/>
         <Class IRI="#Wall_Piano"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasDirectionalSound"/>
+        <Class IRI="#Aerophone"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="#isPercussed"/>
@@ -517,6 +774,10 @@
     </DataPropertyDomain>
     <DataPropertyRange>
         <DataProperty IRI="#hasCrossHarp"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasDirectionalSound"/>
         <Datatype abbreviatedIRI="xsd:boolean"/>
     </DataPropertyRange>
     <DataPropertyRange>
@@ -558,8 +819,33 @@
     </DisjointDataProperties>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Accordion</IRI>
+        <Literal>A musical instrument played by stretching and squeezing with the hands to work a central bellows that blows air over metal reeds, the melody and chords being sounded by buttons or keys.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Aerophone</IRI>
         <Literal>Instruments that produce sound by vibrating columns of air.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Bass</IRI>
+        <Literal>Is a stringed instrument played primarily with the fingers or thumb, by plucking, slapping, popping, tapping, thumping, or picking. The bass is similar in appearance and construction to an electric guitar, but with a longer neck and scale length, and four, five, six, or eight strings.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Bass_Drum</IRI>
+        <Literal>A large drum of indefinite low pitch.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Bell</IRI>
+        <Literal>A hollow metal object, typically in the shape of a deep inverted cup widening at the lip, that sounds a clear musical note when struck, especially by means of a clapper inside.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Cello</IRI>
+        <Literal>A bass instrument of the violin family, held upright on the floor between the legs of the seated player.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -568,8 +854,85 @@
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Crash</IRI>
+        <Literal>A suspended cymbal that is struck with a drumstick to provide loud accents.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Cymbal</IRI>
+        <Literal>A musical instrument consisting of a slightly concave round brass plate which is either struck against another one or struck with a stick to make a ringing or clashing sound.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Double_Bass</IRI>
+        <Literal>The largest and lowest-pitched instrument of the violin family, providing the bassline of the orchestral string section and also used in jazz and some country music.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Drums</IRI>
+        <Literal>A percussion instrument sounded by being struck with sticks or the hands, typically cylindrical, barrel-shaped, or bowl-shaped, with a taut membrane over one or both ends.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Electrophone</IRI>
         <Literal>Instruments that produce sound by electric action or amplification.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Floor</IRI>
+        <Literal>A double-headed tom-tom drum which usually stands on the floor on three legs.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Flute</IRI>
+        <Literal>A wind instrument made from a tube with holes that are stopped by the fingers or keys, held vertically or horizontally (in which case it is also called a transverse flute ) so that the player&apos;s breath strikes a narrow edge.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Glass_Harmonica</IRI>
+        <Literal>A musical instrument in which the sound is made by a row of rotating, concentric glass bowls, kept moist and pressed with the fingers or with keys.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Glass_Harp</IRI>
+        <Literal>A musical instrument consisting of wine glasses tuned by putting different amounts of liquid into them.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Grand_Piano</IRI>
+        <Literal>The harp is in a horizontal possition.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Guitar</IRI>
+        <Literal>A stringed musical instrument, with a fretted fingerboard, typically incurved sides, and six or twelve strings, played by plucking or strumming with the fingers or a plectrum.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Harmonica</IRI>
+        <Literal>A small rectangular wind instrument with a row of metal reeds along its length, held against the lips and moved from side to side to produce different notes by blowing or sucking.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Harp</IRI>
+        <Literal>A musical instrument consisting of a frame supporting a graduated series of parallel strings, played by plucking with the fingers.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Hi_Hat</IRI>
+        <Literal>A pair of foot-operated cymbals</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Human_Voice</IRI>
+        <Literal>Sound made by humans. This sound is produced by the vibration of the vocal chords, and amplified by the body as if it were a resonance box.
+
+Because of the constitution of the chords these can be considered as a membrane. And the sound can be considered has a result of the entire human body. For these reasons this instrument is in all the classes except electrophones.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Hurdy_Gurdy</IRI>
+        <Literal>A musical instrument with a droning sound played by turning a handle, which is typically attached to a rosined wheel sounding a series of drone strings, with keys worked by the left hand.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -578,8 +941,188 @@
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Lute</IRI>
+        <Literal>A plucked stringed instrument with a long neck bearing frets and a rounded body with a flat front, rather like a halved egg in shape.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Lyre</IRI>
+        <Literal>Is a string instrument known for its use in Greek classical antiquity and later periods.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Membranophone</IRI>
         <Literal>Instruments that produce sound by a vibrating membrane.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Oboe</IRI>
+        <Literal>A woodwind instrument with a double-reed mouthpiece, a slender tubular body, and holes stopped by keys.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Piano</IRI>
+        <Literal>A large keyboard musical instrument with a wooden case enclosing a soundboard and metal strings, which are struck by hammers when the keys are depressed. The strings&apos; vibration is stopped by dampers when the keys are released and can be regulated for length and volume by two or three pedals.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Pipe_Organ</IRI>
+        <Literal>A large musical instrument having rows of pipes supplied with air from bellows, and played using a keyboard or by an automatic mechanism.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Rack</IRI>
+        <Literal>A tom-tom with integrated hardware for mounting the drum onto the top of a drum kit&apos;s kick drum or a stand.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Ride</IRI>
+        <Literal>A large suspended cymbal normally used to provide a steady rhythm.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Saxophone</IRI>
+        <Literal>A member of a family of metal wind instruments with a reed like that of a clarinet, used especially in jazz and dance music.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Snare_Drum</IRI>
+        <Literal>A length of wire, gut, or hide stretched across a drumhead to produce a rattling sound.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Sweet_Flute</IRI>
+        <Literal>A flute that is held vertically.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Theremin</IRI>
+        <Literal>An electronic musical instrument in which the tone is generated by two high-frequency oscillators and the pitch controlled by the movement of the performer&apos;s hand towards and away from the circuit.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Tom</IRI>
+        <Literal>A mid-sized drum having one or two heads and a cylindrical body with a depth approximately equal to its diameter.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Transverse_Flute</IRI>
+        <Literal>A flute that is held horizontally.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Triangle</IRI>
+        <Literal>It is a bar of metal, usually steel but sometimes other metals such as beryllium copper, bent into a triangle shape.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Trumpet</IRI>
+        <Literal>A brass musical instrument with a flared bell and a bright, penetrating tone. The modern instrument has the tubing looped to form a straight-sided coil, with three valves.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Tuba</IRI>
+        <Literal>A large brass wind instrument of bass pitch, with three to six valves and a broad bell typically facing upwards.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Ukelele</IRI>
+        <Literal>A small four-stringed guitar of Hawaiian origin.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Viola</IRI>
+        <Literal>An instrument larger than the violin and tuned a fifth lower.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Violin</IRI>
+        <Literal>A stringed musical instrument of treble pitch, played with a horsehair bow. It has four strings and a body of characteristic rounded shape, narrowed at the middle and with two f-shaped soundholes.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Wall_Piano</IRI>
+        <Literal>The harp is in a vertical possition</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasCrossHarp</IRI>
+        <Literal>This implies that the lower strings of the harp are crossed with the higher. This construction implies that their sound is brighter because of its length.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasDifferentSound</IRI>
+        <Literal>Two instruments has different sound if their differ in tone or timbre. The physical form and the matherial are relevant.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasDifferentTechnique</IRI>
+        <Literal>An object has a different technique if is played in a different way, for example a string instrument can be played by pulsing, rubbing or hitting the strings.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasDirectionalSound</IRI>
+        <Literal>The soundwaves have a concrete direction. This makes easier recording.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasKeyboard</IRI>
+        <Literal>The object sound is controlled by keys. Commonly a key represents a note.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasResonanceBox</IRI>
+        <Literal>The object has a box that amplifies the sound.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasSimilarSound</IRI>
+        <Literal>Two instruments has similar sound if their resamble in tone or timbre. The physical form and the matherial are relevant.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasSimilarTechnique</IRI>
+        <Literal>An object has a similar technique depending on the way that is played, for example a string instrument can be played by pulsing, rubbing or hitting the strings.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#isMadeOfWood</IRI>
+        <Literal>The matherial that composes the object is a type of wood.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#isMetalic</IRI>
+        <Literal>The matherial that composes the object is a metal.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#isNewerThan</IRI>
+        <Literal>This property refers to the class, that is to say, the time in which the instrument was designed.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#isOlderThan</IRI>
+        <Literal>This property refers to the class, that is to say, the time in which the instrument was designed.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#isPercussed</IRI>
+        <Literal>The way of making the string vibrate is by hitting it.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#isPulsed</IRI>
+        <Literal>The way of making vibrate the string is by pulsing it with the fingers or with a plectrum.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#isRubbed</IRI>
+        <Literal>The way of making vibrate the string is by rubbing it with a bow.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#isUsedWith</IRI>
+        <Literal>Refers to the most common groups of instruments.</Literal>
     </AnnotationAssertion>
 </Ontology>
 
