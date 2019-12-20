@@ -251,10 +251,10 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Bass"/>
-        <ObjectAllValuesFrom>
+        <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#hasMoreBass"/>
             <Class IRI="#Guitar"/>
-        </ObjectAllValuesFrom>
+        </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Bass_Drum"/>
@@ -311,16 +311,16 @@
     <SubClassOf>
         <Class IRI="#Guitar"/>
         <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#hasSimilarTechnique"/>
+            <ObjectProperty IRI="#hasMoreTreble"/>
             <Class IRI="#Bass"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Guitar"/>
-        <ObjectAllValuesFrom>
-            <ObjectProperty IRI="#hasMoreTreble"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasSimilarTechnique"/>
             <Class IRI="#Bass"/>
-        </ObjectAllValuesFrom>
+        </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Guitar"/>
@@ -373,10 +373,10 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Human_Voice"/>
-        <ObjectAllValuesFrom>
+        <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#isOlderThan"/>
             <Class IRI="#Drums"/>
-        </ObjectAllValuesFrom>
+        </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Hurdy_Gurdy"/>
@@ -446,10 +446,10 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Pipe_Organ"/>
-        <ObjectAllValuesFrom>
+        <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#hasSimilarTechnique"/>
             <Class IRI="#Piano"/>
-        </ObjectAllValuesFrom>
+        </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Pipe_Organ"/>
@@ -487,23 +487,23 @@
     <SubClassOf>
         <Class IRI="#Saxophone"/>
         <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#isNewerThan"/>
-            <Class IRI="#Piano"/>
+            <ObjectProperty IRI="#hasDifferentTechnique"/>
+            <Class IRI="#Harp"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Saxophone"/>
-        <ObjectAllValuesFrom>
-            <ObjectProperty IRI="#hasDifferentTechnique"/>
-            <Class IRI="#Harp"/>
-        </ObjectAllValuesFrom>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasMoreBass"/>
+            <Class IRI="#Trumpet"/>
+        </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Saxophone"/>
-        <ObjectAllValuesFrom>
-            <ObjectProperty IRI="#hasMoreBass"/>
-            <Class IRI="#Trumpet"/>
-        </ObjectAllValuesFrom>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#isNewerThan"/>
+            <Class IRI="#Piano"/>
+        </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Saxophone"/>
@@ -526,10 +526,10 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Sweet_Flute"/>
-        <ObjectAllValuesFrom>
+        <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#hasDifferentSound"/>
             <Class IRI="#Saxophone"/>
-        </ObjectAllValuesFrom>
+        </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Sweet_Flute"/>
@@ -600,17 +600,17 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Viola"/>
-        <ObjectAllValuesFrom>
+        <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#hasMoreBass"/>
             <Class IRI="#Violin"/>
-        </ObjectAllValuesFrom>
+        </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Viola"/>
-        <ObjectAllValuesFrom>
+        <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#hasSimilarSound"/>
             <Class IRI="#Cello"/>
-        </ObjectAllValuesFrom>
+        </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Violin"/>
@@ -752,6 +752,54 @@
     <TransitiveObjectProperty>
         <ObjectProperty IRI="#isUsedWith"/>
     </TransitiveObjectProperty>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasDifferentSound"/>
+        <Class IRI="#Aerophone"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasDifferentSound"/>
+        <Class IRI="#Chordophone"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasDifferentSound"/>
+        <Class IRI="#Electrophone"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasDifferentSound"/>
+        <Class IRI="#Idiophone"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasDifferentSound"/>
+        <Class IRI="#Membranophone"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasDifferentTechnique"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasDifferentSound"/>
+        <Class IRI="#Aerophone"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasDifferentSound"/>
+        <Class IRI="#Chordophone"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasDifferentSound"/>
+        <Class IRI="#Electrophone"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasDifferentSound"/>
+        <Class IRI="#Idiophone"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasDifferentSound"/>
+        <Class IRI="#Membranophone"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasDifferentTechnique"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </ObjectPropertyRange>
     <DataPropertyDomain>
         <DataProperty IRI="#hasCrossHarp"/>
         <Class IRI="#Wall_Piano"/>
