@@ -1,5 +1,6 @@
 import algorithm.*;
 import heuristic.*;
+import jdk.jshell.spi.ExecutionControl;
 import structure.*;
 import java.util.Scanner;
 
@@ -7,75 +8,10 @@ public class Main {
 
     private static int maxExpLevel = 3;
 
-    private static Heuristic heuristicMac1;
-    private static Heuristic heuristicMac2;
-
-
     public static void main( String[] args ) {
+
+        State state = new State();
         gameModeSelector();
-    }
-
-
-    private static void algorithmSelector( Heuristic heuristic) {
-
-        Scanner scanner = new Scanner( System.in );
-        System.out.println(
-                "Select which algorithm do you prefer: \n" +
-                        "\t 1. Minimax \n" +
-                        "\t 2. Alpha-beta" );
-        int option = scanner.nextInt();
-
-        switch ( option ) {
-
-            // Minimax:
-            case 1:
-                MinimaxAlgorithm minimaxAlgorithm = new MinimaxAlgorithm( maxExpLevel, heuristic );
-                break;
-
-            // AlphaBeta
-            case 2:
-                AlphaBetaAlgorithm alphaBetaAlgorithm = new AlphaBetaAlgorithm( maxExpLevel, heuristic );
-                break;
-
-            default:
-                System.out.println( "Invalid option" );
-                break;
-        }
-    }
-
-    private static Heuristic heuristicSelector( Heuristic heuristic ) {
-
-        Scanner scanner = new Scanner( System.in );
-        System.out.println(
-                "Select which heuristic function do you prefer: \n" +
-                        "\t 1. Heuristic 1 \n" +
-                        "\t 2. Heuristic 2 \n" +
-                        "\t 3. Heuristic 3");
-        int option = scanner.nextInt();
-
-        switch ( option ) {
-
-            // Heuristic 1
-            case 1:
-                heuristic = new Heuristic1();
-                break;
-
-            // Heuristic 2
-            case 2:
-                heuristic = new Heuristic2();
-                break;
-
-            // Heuristic 3
-            case 3:
-                heuristic = new Heuristic3();
-                break;
-
-            default:
-                System.out.println( "Invalid option" );
-                break;
-        }
-
-        return heuristic;
     }
 
     private static void gameModeSelector() {
@@ -89,12 +25,10 @@ public class Main {
 
         switch ( gameType ) {
 
-            // 1. Machine vs Machine
             case 1:
                 gameMachineVsMachine();
                 break;
 
-            // 2. Machine vs Person
             case 2:
                 gameMachineVsPerson();
                 break;
@@ -107,23 +41,77 @@ public class Main {
 
     private static void gameMachineVsMachine() {
 
-        // Machine 1
-        heuristicMac1 = heuristicSelector( heuristicMac1 );
+        Heuristic heuristicMac1 = heuristicSelector();
         algorithmSelector( heuristicMac1 );
-        State stateMac1 = new State();
-        Node nodeMac1 = new Node( stateMac1, heuristicMac1.heuristic( stateMac1 ) );
 
-        // Machine 2
-        heuristicMac2 = heuristicSelector( heuristicMac2 );
+        Heuristic heuristicMac2 = heuristicSelector();
         algorithmSelector( heuristicMac2 );
-        State stateMac2 = new State();
-        Node nodeMac2 = new Node( stateMac2, heuristicMac1.heuristic( stateMac2 ) );
     }
 
     private static void gameMachineVsPerson() {
 
-        heuristicMac1 = heuristicSelector( heuristicMac1 );
-        algorithmSelector( heuristicMac1 );
+        Heuristic heuristic = heuristicSelector();
+        algorithmSelector( heuristic );
+    }
 
+    // TO DO: think in how to do this.
+    private static void algorithmSelector( Heuristic heuristic ) {
+
+        Scanner scanner = new Scanner( System.in );
+        System.out.println(
+                "Select which algorithm do you prefer: \n" +
+                        "\t 1. Minimax \n" +
+                        "\t 2. Alpha-beta" );
+        int option = scanner.nextInt();
+
+        switch ( option ) {
+
+            case 1:
+                MinimaxAlgorithm minimaxAlgorithm = new MinimaxAlgorithm( maxExpLevel, heuristic );
+                break;
+
+            case 2:
+                AlphaBetaAlgorithm alphaBetaAlgorithm = new AlphaBetaAlgorithm( maxExpLevel, heuristic );
+                break;
+
+            default:
+                System.out.println( "Invalid option" );
+                break;
+        }
+    }
+
+    private static Heuristic heuristicSelector() {
+
+        Heuristic heuristic;
+
+        Scanner scanner = new Scanner( System.in );
+        System.out.println(
+                "Select which heuristic function do you prefer: \n" +
+                        "\t 1. Heuristic 1 \n" +
+                        "\t 2. Heuristic 2 \n" +
+                        "\t 3. Heuristic 3");
+        int option = scanner.nextInt();
+
+        switch ( option ) {
+
+            case 1:
+                heuristic = new Heuristic1();
+                break;
+
+            case 2:
+                heuristic = new Heuristic2();
+                break;
+
+            case 3:
+                heuristic = new Heuristic3();
+                break;
+
+            default:
+                heuristic = null;
+                System.out.println( "Invalid option" );
+                break;
+        }
+
+        return heuristic;
     }
 }

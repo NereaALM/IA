@@ -9,18 +9,18 @@ public class Heuristic1 implements Heuristic {
         float heuristic;
 
         // Number of tokens
-        float numTokens = state.getMyTokens().size();
-        float opNumTokens = state.getOpponentTokens().size();
+        float numTokens = state.getPlayer1().size();
+        float opNumTokens = state.getPlayer2().size();
         heuristic = 0.3f * ( numTokens - opNumTokens );
 
         // Number of possible tokens
-        float possibleTokens = state.getPossibleTokens( state.getMyTokens() ).size();
-        float opPossibleTokens = state.getPossibleTokens( state.getOpponentTokens() ).size();
+        float possibleTokens = state.getPossibleTokens( state.getPlayer1() ).size();
+        float opPossibleTokens = state.getPossibleTokens( state.getPlayer2() ).size();
         heuristic += 0.5f * ( possibleTokens - opPossibleTokens );
 
         // Accumulation of points
-        float points = state.count( state.getMyTokens() );
-        float opPoints = state.count( state.getOpponentTokens() );
+        float points = state.count( state.getPlayer1() );
+        float opPoints = state.count( state.getPlayer2() );
         heuristic += 0.2f * ( points - opPoints );
 
         return heuristic;

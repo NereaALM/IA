@@ -3,21 +3,20 @@ package structure;
 import java.util.LinkedList;
 import java.util.Random;
 
-public class State {
+public class State implements Cloneable {
 
     private DominoToken board;
-    private LinkedList< DominoToken > myTokens;
-    private LinkedList< DominoToken > opponentTokens;
+    private LinkedList< DominoToken > player1;
+    private LinkedList< DominoToken > player2;
 
     public State( DominoToken board,
                   LinkedList< DominoToken > myTokens,
                   LinkedList< DominoToken > player2 ) {
 
         this.board = board;
-        this.myTokens = myTokens;
-        this.opponentTokens = player2;
+        this.player1 = myTokens;
+        this.player2 = player2;
     }
-
 
     // Initialization for the beginning of the game.
     // The board is null and the tokens are distributed randomly.
@@ -29,23 +28,23 @@ public class State {
     // This method fill the lists of the players randomly.
     public void distributeTokens() {
 
-        myTokens = new LinkedList<>();
-        opponentTokens = new LinkedList<>();
+        player1 = new LinkedList<>();
+        player2 = new LinkedList<>();
 
         Random random = new Random();
         LinkedList< DominoToken > tokenList = createTokens();
         for( DominoToken token : tokenList ) {
 
-            if( myTokens.size() == 14 )
-                opponentTokens.add( token );
+            if( player1.size() == 14 )
+                player2.add( token.clone() );
 
-            else if( opponentTokens.size() == 14 )
-                myTokens.add( token );
+            else if( player2.size() == 14 )
+                player1.add( token.clone() );
 
             else if( random.nextInt() % 2 == 0 )
-                myTokens.add( token );
+                player1.add( token.clone() );
 
-            else opponentTokens.add( token );
+            else player2.add( token.clone() );
         }
     }
 
@@ -53,10 +52,11 @@ public class State {
     public LinkedList< DominoToken > createTokens() {
 
         LinkedList< DominoToken > tokenList = new LinkedList<>();
-
+        int right;
         int accum = 0;
+
         for( int left = 0; left <= 6; left++ ) {
-            int right = 0 + accum;
+            right = accum;
             while( right <= 6 ) {
                 tokenList.add( new DominoToken( left, right ) );
                 right++;
@@ -68,6 +68,8 @@ public class State {
     }
 
 
+    // TO DO:
+
     // This method returns 0 if the state is not final
     // 1 if is final because one player has no tokens
     // 2 if both players have tokens but these don't fit on the board.
@@ -75,21 +77,23 @@ public class State {
 
         int finalState = 0;
 
-        if( myTokens.isEmpty() || opponentTokens.isEmpty() )
+        if( player1.isEmpty() || player2.isEmpty() )
             finalState = 1;
 
-        else if ( getPossibleTokens( myTokens ).isEmpty() && getPossibleTokens( opponentTokens ).isEmpty() )
+        else if ( getPossibleTokens( player1 ).isEmpty() && getPossibleTokens( player2 ).isEmpty() )
             finalState = 2;
 
         return finalState;
     }
 
+    // TO DO: Change for being able for both lists.
     // Returns true if the player1 is the winner.
-    public boolean isWinner( ) {
+    public boolean isWinner() {
+
         boolean isWinner = false;
 
-        if (    myTokens.isEmpty() ||
-                isFinal() == 2 && ( count( myTokens ) < count( opponentTokens ) ) )
+        if (    player1.isEmpty() ||
+                isFinal() == 2 && ( count( player1 ) < count( player2 ) ) )
             isWinner = true;
 
         return isWinner;
@@ -107,31 +111,16 @@ public class State {
         return num;
     }
 
-    // This method returns a list with all the tokens that can be used on the board.
-    public LinkedList< DominoToken > getPossibleTokens( LinkedList< DominoToken> playerList ) {
-        LinkedList< DominoToken > possibleTokenList = new LinkedList<>();
-
-        for( DominoToken token : playerList ) {
-
-            if( token.getRight() == board.getRight() ||
-            token.getRight() == board.getLeft() ||
-            token.getLeft() == board.getRight() ||
-            token.getLeft() == board.getLeft() )
-
-                possibleTokenList.add( token );
-        }
-
-        return possibleTokenList;
-    }
-
+    // TO DO: Change for being able for both lists.
     public LinkedList< State > getSuccessorList() {
+
         LinkedList< State > successorList = new LinkedList<>();
-        LinkedList< DominoToken > possibleTokens = getPossibleTokens( myTokens );
+        LinkedList< DominoToken > possibleTokens = getPossibleTokens( player1 );
 
         State newState;
         for( DominoToken token : possibleTokens ) {
-            newState = new State( board, myTokens, opponentTokens );
-            newState.myTokens.remove( token );
+            newState = new State( board, player1, player2 );
+            newState.player1.remove( token );
 
             if( board.getRight() == token.getRight() )
                 board.setRight( token.getLeft() );
@@ -148,16 +137,39 @@ public class State {
         return successorList;
     }
 
+    // This method returns a list with all the tokens that can be used on the board.
+    public LinkedList< DominoToken > getPossibleTokens( LinkedList< DominoToken> playerList ) {
+
+        LinkedList< DominoToken > possibleTokenList = new LinkedList<>();
+
+        for( DominoToken token : playerList ) {
+
+            if( token.getRight() == board.getRight() ||
+                    token.getRight() == board.getLeft() ||
+                    token.getLeft() == board.getRight() ||
+                    token.getLeft() == board.getLeft() )
+
+                possibleTokenList.add( token.clone() );
+        }
+
+        return possibleTokenList;
+    }
+
+    // END TO DO.
+
+    public State clone() {
+        return new State( board, player1, player2 );
+    }
 
     public DominoToken getBoard() {
         return board;
     }
 
-    public LinkedList< DominoToken > getMyTokens() {
-        return myTokens;
+    public LinkedList< DominoToken > getPlayer1() {
+        return player1;
     }
 
-    public LinkedList< DominoToken > getOpponentTokens() {
-        return opponentTokens;
+    public LinkedList< DominoToken > getPlayer2() {
+        return player2;
     }
 }

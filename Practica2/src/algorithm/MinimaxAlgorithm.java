@@ -20,32 +20,32 @@ public class MinimaxAlgorithm {
 
         Node result;
 
-        // Direct cases:
         if( currentNode.getState().isFinal() != 0 ) {
+
             if ( currentNode.getState().isWinner() )
-                result = new Node( currentNode.getState(), Float.MAX_VALUE );
-            else result = new Node( currentNode.getState(), -Float.MAX_VALUE );
+                result = new Node( null, Float.MAX_VALUE );
+            else result = new Node( null, -Float.MAX_VALUE );
         }
         else if( currentLevel == maxExpLevel )
-            result = new Node( currentNode.getState(), heuristic.heuristic( currentNode.getState() ) );
+            result = new Node( null, heuristic.heuristic( currentNode.getState() ) );
 
-        // Recursive case:
         else {
+
             if( isMax( currentLevel ) )
-                result = new Node( currentNode.getState(), -Float.MAX_VALUE );
-            else result = new Node( currentNode.getState(), Float.MAX_VALUE );
+                result = new Node( null, -Float.MAX_VALUE );
+            else result = new Node( null, Float.MAX_VALUE );
 
             LinkedList< Node > successorList = getSuccessorList( currentNode );
             for( Node successor : successorList ) {
 
                 Node newNode = minimax( successor, currentLevel + 1 );
-
                 if( isMax( currentLevel ) ) {
+
                     if ( newNode.getHeuristic() > result.getHeuristic() )
-                        result = new Node( successor.getState(), newNode.getHeuristic() );
+                        result = new Node( successor.getState().clone(), newNode.getHeuristic() );
 
                     else if ( newNode.getHeuristic() < result.getHeuristic() )
-                        result = new Node( successor.getState(), newNode.getHeuristic() );
+                        result = new Node( successor.getState().clone(), newNode.getHeuristic() );
                 }
             }
         }

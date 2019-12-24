@@ -1,3 +1,0 @@
-implementar maquina contra maquina con minimax
-empezar a desarrollar más las heuristicas
-implementar alpha-beta

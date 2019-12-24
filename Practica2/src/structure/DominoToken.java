@@ -1,6 +1,6 @@
 package structure;
 
-public class DominoToken {
+public class DominoToken implements Cloneable {
 
     private int left;
     private int right;
@@ -11,6 +11,10 @@ public class DominoToken {
     }
 
 
+    public DominoToken clone() {
+        return new DominoToken( left, right );
+    }
+
     public DominoToken reverse() {
         return new DominoToken( right, left );
     }
@@ -18,6 +22,10 @@ public class DominoToken {
     public boolean isEqual( DominoToken token ) {
         return left == token.left && right == token.right ||
                 left == token.right && right == token.left;
+    }
+
+    public String toString() {
+        return left + "\t" + right;
     }
 
 
@@ -35,9 +43,5 @@ public class DominoToken {
 
     public void setLeft(int left) {
         this.left = left;
-    }
-
-    public String toString() {
-        return left + "\t" + right;
     }
 }

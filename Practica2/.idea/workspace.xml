@@ -2,55 +2,67 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d7a2c2d5-10c1-4013-9645-94d5a7e7538a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Juegos_-_Minimax_Alfabeta.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TO DO.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Practica2/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Practica2/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Practica2/algorithm/AlphaBetaAlgorithm.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Practica2/algorithm/AlphaBetaAlgorithm.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Practica2/algorithm/Node.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Practica2/algorithm/Node.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Practica2/heuristic/Heuristic1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Practica2/heuristic/Heuristic1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Practica2/heuristic/Heuristic2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Practica2/heuristic/Heuristic2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Practica2/heuristic/Heuristic3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Practica2/heuristic/Heuristic3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Practica2/structure/DominoToken.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Practica2/structure/DominoToken.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Practica2/structure/State.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Practica2/structure/State.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/algorithm/AlphaBetaAlgorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/algorithm/AlphaBetaAlgorithm.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/algorithm/MinimaxAlgorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/algorithm/MinimaxAlgorithm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/algorithm/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/algorithm/Node.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/heuristic/Heuristic1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/heuristic/Heuristic1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/heuristic/Heuristic2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/heuristic/Heuristic2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/heuristic/Heuristic3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/heuristic/Heuristic3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/structure/DominoToken.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/structure/DominoToken.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/structure/State.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/structure/State.java" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="1" />
+  </component>
   <component name="ProjectId" id="1TClwQ1QqCZ2s7XkBH708FDj0Ex" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Java" />
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -65,6 +77,18 @@
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -83,6 +107,9 @@
       <workItem from="1574434017596" duration="13299000" />
       <workItem from="1574503961217" duration="7833000" />
       <workItem from="1574573986561" duration="17032000" />
+      <workItem from="1577116904178" duration="4345000" />
+      <workItem from="1577180052321" duration="78000" />
+      <workItem from="1577200641391" duration="6246000" />
     </task>
     <servers />
   </component>
@@ -104,5 +131,39 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="1246" y="233" key="#com.intellij.ide.util.MemberChooser" timestamp="1577208073759">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1246" y="233" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1577208073759" />
+    <state x="539" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1577117137961">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="539" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1577117137961" />
+    <state x="1221" y="279" key="FileChooserDialogImpl" timestamp="1577180129737">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1221" y="279" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1577180129737" />
+    <state width="912" height="280" key="GridCell.Tab.0.bottom" timestamp="1577209396695">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="912" height="280" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1577209396695" />
+    <state width="912" height="280" key="GridCell.Tab.0.center" timestamp="1577209396695">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="912" height="280" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1577209396695" />
+    <state width="912" height="280" key="GridCell.Tab.0.left" timestamp="1577209396695">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="912" height="280" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1577209396695" />
+    <state width="912" height="280" key="GridCell.Tab.0.right" timestamp="1577209396695">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="912" height="280" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1577209396695" />
+    <state x="764" y="157" key="SettingsEditor" timestamp="1577180119517">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="764" y="157" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1577180119517" />
   </component>
 </project>
