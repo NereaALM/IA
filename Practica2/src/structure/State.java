@@ -10,11 +10,11 @@ public class State implements Cloneable {
     private LinkedList< DominoToken > player2;
 
     public State( DominoToken board,
-                  LinkedList< DominoToken > myTokens,
+                  LinkedList< DominoToken > player1,
                   LinkedList< DominoToken > player2 ) {
 
         this.board = board;
-        this.player1 = myTokens;
+        this.player1 = player1;
         this.player2 = player2;
     }
 
@@ -67,8 +67,6 @@ public class State implements Cloneable {
         return tokenList;
     }
 
-
-    // TO DO:
 
     // This method returns 0 if the state is not final
     // 1 if is final because one player has no tokens
@@ -155,7 +153,6 @@ public class State implements Cloneable {
         return possibleTokenList;
     }
 
-    // END TO DO.
 
     public State clone() {
         return new State( board, player1, player2 );
