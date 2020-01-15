@@ -1,6 +1,5 @@
 import algorithm.*;
 import heuristic.*;
-import jdk.jshell.spi.ExecutionControl;
 import structure.*;
 import java.util.Scanner;
 
@@ -95,15 +94,15 @@ public class Main {
         switch ( option ) {
 
             case 1:
-                heuristic = new Heuristic1();
+                heuristic = new TheGood();
                 break;
 
             case 2:
-                heuristic = new Heuristic2();
+                heuristic = new TheBad();
                 break;
 
             case 3:
-                heuristic = new Heuristic3();
+                heuristic = new TheUgly();
                 break;
 
             default:
