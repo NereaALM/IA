@@ -4,19 +4,19 @@ import structure.State;
 
 public class Node {
 
-    private State state;
-    private float heuristic;
+	private State state;
+	private float heuristic;
 
-    public Node( State state, float heuristic ) {
-        this.state = state;
-        this.heuristic = heuristic;
-    }
+	public Node(State state, float heuristic) {
+		this.state = state;
+		this.heuristic = heuristic;
+	}
 
-    public float getHeuristic() {
-        return heuristic;
-    }
+	public float getHeuristic() {
+		return heuristic;
+	}
 
-    public State getState() {
-        return state;
-    }
+	public State getState() {
+		return state;
+	}
 }

@@ -2,7 +2,29 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d7a2c2d5-10c1-4013-9645-94d5a7e7538a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/algorithm/AlphaBeta.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/algorithm/GameAlgorithm.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/algorithm/Minmax.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/structure/Move.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Practica2/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Practica2/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Practica2/algorithm/AlphaBetaAlgorithm.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Practica2/algorithm/MinimaxAlgorithm.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Practica2/heuristic/Heuristic1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Practica2/heuristic/Heuristic2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Practica2/heuristic/Heuristic3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Practica2/structure/DominoToken.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Practica2/structure/DominoToken.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Practica2/structure/State.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Practica2/structure/State.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/algorithm/AlphaBetaAlgorithm.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/algorithm/MinimaxAlgorithm.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/algorithm/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/algorithm/Node.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/heuristic/Heuristic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/heuristic/Heuristic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/heuristic/Heuristic1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/heuristic/TheGood.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/heuristic/Heuristic2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/heuristic/TheBad.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/heuristic/Heuristic3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/heuristic/TheUgly.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/structure/DominoToken.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/structure/DominoToken.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/structure/State.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/structure/State.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -16,8 +38,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -43,9 +65,10 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="extract.method.default.visibility" value="private" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../ModelitzacioiVisualitzacio/Lopez_Nerea_Exercici2" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Java" />
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -95,6 +118,10 @@
       <workItem from="1577200641391" duration="6781000" />
       <workItem from="1577450053756" duration="2373000" />
       <workItem from="1577987271871" duration="11000" />
+      <workItem from="1579005518914" duration="745000" />
+      <workItem from="1579512283577" duration="19000" />
+      <workItem from="1579541110643" duration="15541000" />
+      <workItem from="1579564440612" duration="28000" />
     </task>
     <servers />
   </component>
@@ -118,37 +145,69 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="1246" y="233" key="#com.intellij.ide.util.MemberChooser" timestamp="1577208073759">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="233" y="0" key="#Java" timestamp="1579549701236">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
+    <state x="233" y="0" key="#Java/0.0.1280.680@0.0.1280.680" timestamp="1579549701236" />
+    <state x="831" y="85" key="#com.intellij.ide.util.MemberChooser" timestamp="1579560232646">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="831" y="85" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680@0.0.1280.680" timestamp="1579560232646" />
     <state x="1246" y="233" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1577208073759" />
-    <state x="539" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1577117137961">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="809" y="234" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1579544159666">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
+    <state x="809" y="234" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1280.680@0.0.1280.680" timestamp="1579544159666" />
+    <state x="359" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1579560251695">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="359" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1280.680@0.0.1280.680" timestamp="1579560251695" />
     <state x="539" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1577117137961" />
-    <state x="1221" y="279" key="FileChooserDialogImpl" timestamp="1577987280126">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="708" y="201" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1579561326520">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
+    <state x="708" y="201" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1280.680@0.0.1280.680" timestamp="1579561326520" />
+    <state x="814" y="182" key="FileChooserDialogImpl" timestamp="1579544205564">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="814" y="182" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1579544205564" />
     <state x="1221" y="279" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1577987280126" />
-    <state width="912" height="280" key="GridCell.Tab.0.bottom" timestamp="1577209910851">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="595" height="36" key="GridCell.Tab.0.bottom" timestamp="1579564411504">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
+    <state width="595" height="36" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1579564411504" />
     <state width="912" height="280" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1577209910851" />
-    <state width="912" height="280" key="GridCell.Tab.0.center" timestamp="1577209910851">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="595" height="36" key="GridCell.Tab.0.center" timestamp="1579564411504">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
+    <state width="595" height="36" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1579564411504" />
     <state width="912" height="280" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1577209910851" />
-    <state width="912" height="280" key="GridCell.Tab.0.left" timestamp="1577209910851">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="595" height="36" key="GridCell.Tab.0.left" timestamp="1579564411504">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
+    <state width="595" height="36" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1579564411504" />
     <state width="912" height="280" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1577209910851" />
-    <state width="912" height="280" key="GridCell.Tab.0.right" timestamp="1577209910851">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="595" height="36" key="GridCell.Tab.0.right" timestamp="1579564411504">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
+    <state width="595" height="36" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1579564411504" />
     <state width="912" height="280" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1577209910851" />
-    <state x="764" y="157" key="SettingsEditor" timestamp="1577180119517">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="273" y="0" key="SettingsEditor" timestamp="1579561277106">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
+    <state x="273" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1579561277106" />
     <state x="764" y="157" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1577180119517" />
+    <state x="23" y="166" key="com.intellij.ide.util.TipDialog" timestamp="1579564459742">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="23" y="166" key="com.intellij.ide.util.TipDialog/0.0.1280.680@0.0.1280.680" timestamp="1579564459742" />
+    <state x="336" y="72" width="609" height="536" key="find.popup" timestamp="1579561894260">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="336" y="72" width="609" height="536" key="find.popup/0.0.1280.680@0.0.1280.680" timestamp="1579561894260" />
+    <state x="297" y="151" key="run.anything.popup" timestamp="1579559674298">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="297" y="151" key="run.anything.popup/0.0.1280.680@0.0.1280.680" timestamp="1579559674298" />
   </component>
 </project>

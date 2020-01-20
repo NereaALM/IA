@@ -3,5 +3,5 @@ package heuristic;
 import structure.State;
 
 public interface Heuristic {
-    float heuristic( State state );
+	float heuristic(State state);
 }
