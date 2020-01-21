@@ -122,8 +122,8 @@ public class State {
 			else newState.player2.remove(move.usedToken);
 
 			if (move.isLeftBoard)
-				newState.board.left = move.isLeftMine ? move.usedToken.left : move.usedToken.right;
-			else newState.board.right = move.isLeftMine ? move.usedToken.left : move.usedToken.right;
+				newState.board.left = move.isLeftMine ? move.usedToken.right : move.usedToken.left;
+			else newState.board.right = move.isLeftMine ? move.usedToken.right : move.usedToken.left;
 
 			successorList.add(newState);
 		}

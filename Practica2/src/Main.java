@@ -37,7 +37,8 @@ public class Main {
 	private static void gameMachineVsMachine() {
 
 		State state = new State();
-		Node node;
+		Node node = null;
+		boolean isPlayer1Turn = state.isPlayer1Turn();
 
 		Heuristic player1H = heuristicSelector();
 		GameAlgorithm player1 = algorithmSelector(player1H, true);
@@ -45,9 +46,9 @@ public class Main {
 		Heuristic player2H = heuristicSelector();
 		GameAlgorithm player2 = algorithmSelector(player2H, false);
 
-		while (state.whichFinal() == 0) {
+		while (state != null && state.whichFinal() == 0) {
 
-			System.out.println(state.toString());
+			System.out.println(state.toString() + "\n");
 
 			if (state.isPlayer1Turn())
 				node = player1.gameAlgorithm(new Node(state, player1H.heuristic(state)), 0);
@@ -55,10 +56,17 @@ public class Main {
 			else node = player2.gameAlgorithm(new Node(state, player2H.heuristic(state)), 0);
 
 			state = node.getState();
+			isPlayer1Turn = !isPlayer1Turn;
 		}
 
-		if (state.isWinner()) System.out.println("The player 1 is the winner");
-		else System.out.println("The player 2 is the winner");
+		if (isPlayer1Turn) {
+			if (node.getHeuristic() == Float.MAX_VALUE) System.out.println("The player 1 is the winner");
+			else System.out.println("The player 2 is the winner");
+		}
+		else {
+			if (node.getHeuristic() == Float.MAX_VALUE) System.out.println("The player 2 is the winner");
+			else System.out.println("The player 1 is the winner");
+		}
 	}
 
 	private static void gameMachineVsPerson() {

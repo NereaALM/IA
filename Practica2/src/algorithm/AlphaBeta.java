@@ -23,7 +23,42 @@ public class AlphaBeta implements GameAlgorithm {
 	}
 
 	public Node alphaBeta(Node currentNode, int currentLevel, float alpha, float beta) {
-		return null;
+
+		Node result = new Node(null, 0);
+
+		if (currentNode.getState().whichFinal() != 0) {
+			if (currentNode.getState().isWinner() == isPlayer1)
+				result = new Node(null, Float.MAX_VALUE);
+			else result = new Node(null, -Float.MAX_VALUE);
+		}
+
+		else if (currentLevel == maxExpLevel)
+			result = new Node(null, heuristic.heuristic(currentNode.getState()));
+
+		else {
+			LinkedList<Node> successorList = getSuccessorList(currentNode);
+
+			for (Node successor : successorList) {
+				Node newNode = alphaBeta(successor, currentLevel + 1, alpha, beta);
+
+				if (isMax(currentLevel)) {
+					if (newNode.getHeuristic() > alpha) {
+						alpha = newNode.getHeuristic();
+						result = new Node(successor.getState(), newNode.getHeuristic());
+					}
+					else if (newNode.getHeuristic() < beta) {
+						beta = newNode.getHeuristic();
+						result = new Node(successor.getState(), newNode.getHeuristic());
+					}
+				}
+
+				if (isMax(currentLevel))
+					result = new Node(result.getState(), alpha);
+				else result = new Node(result.getState(), beta);
+			}
+		}
+
+		return result;
 	}
 
 
@@ -35,8 +70,8 @@ public class AlphaBeta implements GameAlgorithm {
 	public LinkedList<Node> getSuccessorList(Node node) {
 
 		LinkedList<State> successorStates = node.getState().getSuccessorList();
-
 		LinkedList<Node> successorNodes = new LinkedList<>();
+
 		for (State state : successorStates)
 			successorNodes.add(new Node(state, heuristic.heuristic(state)));
 

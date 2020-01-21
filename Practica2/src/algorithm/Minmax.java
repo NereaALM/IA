@@ -38,9 +38,9 @@ public class Minmax implements GameAlgorithm {
 			for (Node successor : successorList) {
 				Node newNode = gameAlgorithm(successor, currentLevel + 1);
 				if (isMax(currentLevel)) {
-					if (newNode.getHeuristic() > result.getHeuristic())
+					if (newNode.getHeuristic() >= result.getHeuristic())
 						result = new Node(successor.getState(), newNode.getHeuristic());
-					else if (newNode.getHeuristic() < result.getHeuristic())
+					else if (newNode.getHeuristic() <= result.getHeuristic())
 						result = new Node(successor.getState(), newNode.getHeuristic());
 				}
 			}
