@@ -42,11 +42,11 @@ public class AlphaBeta implements GameAlgorithm {
 				Node newNode = alphaBeta(successor, currentLevel + 1, alpha, beta);
 
 				if (isMax(currentLevel)) {
-					if (newNode.getHeuristic() > alpha) {
+					if (newNode.getHeuristic() >= alpha) {
 						alpha = newNode.getHeuristic();
 						result = new Node(successor.getState(), newNode.getHeuristic());
 					}
-					else if (newNode.getHeuristic() < beta) {
+					else if (newNode.getHeuristic() <= beta) {
 						beta = newNode.getHeuristic();
 						result = new Node(successor.getState(), newNode.getHeuristic());
 					}
