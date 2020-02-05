@@ -85,7 +85,8 @@ public class State {
 		if (player1.isEmpty() || player2.isEmpty())
 			finalState = 1;
 
-		else if (getPossibleMoves(player1).isEmpty() && getPossibleMoves(player2).isEmpty())
+		else if (getPossibleMoves(player1).getFirst().usedToken == null &&
+				getPossibleMoves(player2).getFirst().usedToken == null)
 			finalState = 2;
 
 		return finalState;
@@ -118,13 +119,14 @@ public class State {
 					(LinkedList) player1.clone(),
 					(LinkedList) player2.clone(),
 					!isPlayer1Turn);
-			if (isPlayer1Turn) newState.player1.remove(move.usedToken);
-			else newState.player2.remove(move.usedToken);
+			if (move.usedToken != null) {
+				if (isPlayer1Turn) newState.player1.remove(move.usedToken);
+				else newState.player2.remove(move.usedToken);
 
-			if (move.isLeftBoard)
-				newState.board.left = move.isLeftMine ? move.usedToken.right : move.usedToken.left;
-			else newState.board.right = move.isLeftMine ? move.usedToken.right : move.usedToken.left;
-
+				if (move.isLeftBoard)
+					newState.board.left = move.isLeftMine ? move.usedToken.right : move.usedToken.left;
+				else newState.board.right = move.isLeftMine ? move.usedToken.right : move.usedToken.left;
+			}
 			successorList.add(newState);
 		}
 
@@ -137,11 +139,14 @@ public class State {
 		LinkedList<Move> possibleMoveList = new LinkedList<>();
 
 		for (DominoToken token : playerList) {
-			if (token.right == board.right) possibleMoveList.add(new Move(token, false, false));
-			if (token.right == board.left) possibleMoveList.add(new Move(token, false, true));
-			if (token.left == board.right) possibleMoveList.add(new Move(token, true, false));
-			if (token.left == board.left) possibleMoveList.add(new Move(token, true, true));
+			if (token.right == board.right)	possibleMoveList.add(new Move(token, false, false));
+			if (token.right == board.left)	possibleMoveList.add(new Move(token, false, true));
+			if (token.left == board.right)	possibleMoveList.add(new Move(token, true, false));
+			if (token.left == board.left)	possibleMoveList.add(new Move(token, true, true));
 		}
+
+		if (possibleMoveList.isEmpty())
+			possibleMoveList.add(new Move(null, false, false));
 
 		return possibleMoveList;
 	}

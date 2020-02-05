@@ -56,10 +56,11 @@ public class Main {
 			else node = player2.gameAlgorithm(new Node(state, player2H.heuristic(state)), 0);
 
 			state = node.getState();
+
 			isPlayer1Turn = !isPlayer1Turn;
 		}
 
-		if (isPlayer1Turn) {
+		if (!isPlayer1Turn) {
 			if (node.getHeuristic() == Float.MAX_VALUE) System.out.println("The player 1 is the winner");
 			else System.out.println("The player 2 is the winner");
 		}
@@ -67,6 +68,9 @@ public class Main {
 			if (node.getHeuristic() == Float.MAX_VALUE) System.out.println("The player 2 is the winner");
 			else System.out.println("The player 1 is the winner");
 		}
+
+		if(state.whichFinal() == 1)	System.out.println("The winner has no tokens");
+		else System.out.println("Anybody has a possible move");
 	}
 
 	private static void gameMachineVsPerson() {
@@ -77,7 +81,6 @@ public class Main {
 		// Human TO DO
 	}
 
-	// TO DO: think in how to do this.
 	private static GameAlgorithm algorithmSelector(Heuristic heuristic, boolean isPlayer1) {
 
 		GameAlgorithm gameAlgorithm;

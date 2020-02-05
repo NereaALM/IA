@@ -24,6 +24,6 @@ public class TheGood implements Heuristic {
 
 		heuristic = (ownTokens - opTokens) + (posOwnT - posOpT) + (ownPosT - opPosT);
 
-		return heuristic;
+		return 0;
 	}
 }
