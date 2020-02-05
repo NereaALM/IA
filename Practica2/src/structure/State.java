@@ -112,25 +112,28 @@ public class State {
 
 		LinkedList<State> successorList = new LinkedList<>();
 		LinkedList<Move> possibleMoves = getPossibleMoves((isPlayer1Turn) ? player1 : player2);
-		State newState;
 
-		for (Move move : possibleMoves) {
-			newState = new State(board.clone(),
-					(LinkedList) player1.clone(),
-					(LinkedList) player2.clone(),
-					!isPlayer1Turn);
-			if (move.usedToken != null) {
-				if (isPlayer1Turn) newState.player1.remove(move.usedToken);
-				else newState.player2.remove(move.usedToken);
-
-				if (move.isLeftBoard)
-					newState.board.left = move.isLeftMine ? move.usedToken.right : move.usedToken.left;
-				else newState.board.right = move.isLeftMine ? move.usedToken.right : move.usedToken.left;
-			}
-			successorList.add(newState);
-		}
+		for (Move move : possibleMoves)
+			successorList.add(getSuccessor(move));
 
 		return successorList;
+	}
+
+	// This method returns a new state with the given move
+	public State getSuccessor(Move move) {
+		State newState = new State(board.clone(),
+				(LinkedList) player1.clone(),
+				(LinkedList) player2.clone(),
+				!isPlayer1Turn);
+		if (move.usedToken != null) {
+			if (isPlayer1Turn) newState.player1.remove(move.usedToken);
+			else newState.player2.remove(move.usedToken);
+
+			if (move.isLeftBoard)
+				newState.board.left = move.isLeftMine ? move.usedToken.right : move.usedToken.left;
+			else newState.board.right = move.isLeftMine ? move.usedToken.right : move.usedToken.left;
+		}
+		return newState;
 	}
 
 	// This method returns a list with all the movements that can be used on the board.

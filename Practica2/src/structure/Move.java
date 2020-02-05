@@ -10,4 +10,10 @@ public class Move {
 		this.isLeftBoard = isLeftBoard;
 		this.isLeftMine = isLeftMine;
 	}
+
+	public String toString() {
+		return	"Token: " + usedToken
+				+ "\tIs my left? " + isLeftMine
+				+ "\tIs board left? " + isLeftBoard + "\n";
+	}
 }

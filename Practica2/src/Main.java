@@ -6,142 +6,170 @@ import java.util.Scanner;
 
 public class Main {
 
-	private static Scanner scanner = new Scanner(System.in);
-	private static int maxExpLevel = 3;
+    private static Scanner scanner = new Scanner(System.in);
+    private static int maxExpLevel = 3;
 
-	public static void main(String[] args) {
+    public static void main(String[] args) {
 
-		System.out.println(
-				"Select an option: \n" +
-						"\t 1. Machine vs Machine \n" +
-						"\t 2. Machine vs Person");
-		int gameType = scanner.nextInt();
+        System.out.println(
+                "Select an option: \n" +
+                        "\t 1. Machine vs Machine \n" +
+                        "\t 2. Machine vs Person");
+        int gameType = scanner.nextInt();
 
-		switch (gameType) {
+        switch (gameType) {
 
-			case 1:
-				gameMachineVsMachine();
-				break;
+            case 1:
+                gameMachineVsMachine();
+                break;
 
-			case 2:
-				gameMachineVsPerson();
-				break;
+            case 2:
+                gameMachineVsPerson();
+                break;
 
-			default:
-				System.out.println("Invalid option");
-				break;
-		}
-		scanner.close();
-	}
+            default:
+                System.out.println("Invalid option");
+                break;
+        }
+        scanner.close();
+    }
 
-	private static void gameMachineVsMachine() {
+    private static void gameMachineVsMachine() {
 
-		State state = new State();
-		Node node = null;
-		boolean isPlayer1Turn = state.isPlayer1Turn();
+        State state = new State();
+        Node node = null;
+        boolean isPlayer1Turn = state.isPlayer1Turn();
 
-		Heuristic player1H = heuristicSelector();
-		GameAlgorithm player1 = algorithmSelector(player1H, true);
+        Heuristic player1H = heuristicSelector();
+        GameAlgorithm player1 = algorithmSelector(player1H, true);
 
-		Heuristic player2H = heuristicSelector();
-		GameAlgorithm player2 = algorithmSelector(player2H, false);
+        Heuristic player2H = heuristicSelector();
+        GameAlgorithm player2 = algorithmSelector(player2H, false);
 
-		while (state != null && state.whichFinal() == 0) {
+        while (state != null && state.whichFinal() == 0) {
 
-			System.out.println(state.toString() + "\n");
+            System.out.println(state.toString() + "\n");
 
-			if (state.isPlayer1Turn())
-				node = player1.gameAlgorithm(new Node(state, player1H.heuristic(state)), 0);
+            if (state.isPlayer1Turn())
+                node = player1.gameAlgorithm(new Node(state, player1H.heuristic(state)), 0);
 
-			else node = player2.gameAlgorithm(new Node(state, player2H.heuristic(state)), 0);
+            else node = player2.gameAlgorithm(new Node(state, player2H.heuristic(state)), 0);
 
-			state = node.getState();
+            state = node.getState();
 
-			isPlayer1Turn = !isPlayer1Turn;
-		}
+            isPlayer1Turn = !isPlayer1Turn;
+        }
 
-		if (!isPlayer1Turn) {
-			if (node.getHeuristic() == Float.MAX_VALUE) System.out.println("The player 1 is the winner");
-			else System.out.println("The player 2 is the winner");
-		}
-		else {
-			if (node.getHeuristic() == Float.MAX_VALUE) System.out.println("The player 2 is the winner");
-			else System.out.println("The player 1 is the winner");
-		}
+        if (!isPlayer1Turn) {
+            if (node.getHeuristic() == Float.MAX_VALUE) System.out.println("The player 1 is the winner");
+            else System.out.println("The player 2 is the winner");
+        } else {
+            if (node.getHeuristic() == Float.MAX_VALUE) System.out.println("The player 2 is the winner");
+            else System.out.println("The player 1 is the winner");
+        }
 
-		if(state.whichFinal() == 1)	System.out.println("The winner has no tokens");
-		else System.out.println("Anybody has a possible move");
-	}
+        if (state.whichFinal() == 1) System.out.println("The winner has no tokens");
+        else System.out.println("Anybody has a possible move");
+    }
 
-	private static void gameMachineVsPerson() {
+    private static void gameMachineVsPerson() {
 
-		Heuristic heuristic = heuristicSelector();
-		algorithmSelector(heuristic, true);
+        State state = new State();
+        Node node = null;
+        boolean isPlayer1Turn = state.isPlayer1Turn();
 
-		// Human TO DO
-	}
+        Heuristic player1H = heuristicSelector();
+        GameAlgorithm player1 = algorithmSelector(player1H, true);
 
-	private static GameAlgorithm algorithmSelector(Heuristic heuristic, boolean isPlayer1) {
+        while (state != null && state.whichFinal() == 0) {
 
-		GameAlgorithm gameAlgorithm;
+            System.out.println(state.toString() + "\n");
 
-		System.out.println(
-				"Select which algorithm do you prefer: \n" +
-						"\t 1. Minimax \n" +
-						"\t 2. Alpha-beta");
-		int option = scanner.nextInt();
+            if (state.isPlayer1Turn()) {
+                node = player1.gameAlgorithm(new Node(state, player1H.heuristic(state)), 0);
+                state = node.getState();
+            }
+            else {
+                System.out.println("Choose your movement: \n");
+                System.out.println(state.getPossibleMoves(state.getPlayer2()));
+                int move = scanner.nextInt();
+                state = state.getSuccessor(state.getPossibleMoves(state.getPlayer2()).get(move));
+            }
+            isPlayer1Turn = !isPlayer1Turn;
+        }
 
-		switch (option) {
+        if (!isPlayer1Turn) {
+            if (state.isWinner()) System.out.println("The player 1 is the winner");
+            else System.out.println("The player 2 is the winner");
+        } else {
+            if (node.getHeuristic() == Float.MAX_VALUE) System.out.println("The player 2 is the winner");
+            else System.out.println("The player 1 is the winner");
+        }
 
-			case 1:
-				gameAlgorithm = new Minmax(maxExpLevel, heuristic, isPlayer1);
-				break;
+        if (state.whichFinal() == 1) System.out.println("The winner has no tokens");
+        else System.out.println("Anybody has a possible move");
+    }
 
-			case 2:
-				gameAlgorithm = new AlphaBeta(maxExpLevel, heuristic, isPlayer1);
-				break;
+    private static GameAlgorithm algorithmSelector(Heuristic heuristic, boolean isPlayer1) {
 
-			default:
-				gameAlgorithm = null;
-				System.out.println("Invalid option");
-				break;
-		}
+        GameAlgorithm gameAlgorithm;
 
-		return gameAlgorithm;
-	}
+        System.out.println(
+                "Select which algorithm do you prefer: \n" +
+                        "\t 1. Minimax \n" +
+                        "\t 2. Alpha-beta");
+        int option = scanner.nextInt();
 
-	private static Heuristic heuristicSelector() {
+        switch (option) {
 
-		Heuristic heuristic;
+            case 1:
+                gameAlgorithm = new Minmax(maxExpLevel, heuristic, isPlayer1);
+                break;
 
-		Scanner scanner = new Scanner(System.in);
-		System.out.println(
-				"Select which heuristic function do you prefer: \n" +
-						"\t 1. Heuristic 1 \n" +
-						"\t 2. Heuristic 2 \n" +
-						"\t 3. Heuristic 3");
-		int option = scanner.nextInt();
+            case 2:
+                gameAlgorithm = new AlphaBeta(maxExpLevel, heuristic, isPlayer1);
+                break;
 
-		switch (option) {
+            default:
+                gameAlgorithm = null;
+                System.out.println("Invalid option");
+                break;
+        }
 
-			case 1:
-				heuristic = new TheGood();
-				break;
+        return gameAlgorithm;
+    }
 
-			case 2:
-				heuristic = new TheBad();
-				break;
+    private static Heuristic heuristicSelector() {
 
-			case 3:
-				heuristic = new TheUgly();
-				break;
+        Heuristic heuristic;
 
-			default:
-				heuristic = null;
-				System.out.println("Invalid option");
-				break;
-		}
+        System.out.println(
+                "Select which heuristic function do you prefer: \n" +
+                        "\t 1. The good \n" +
+                        "\t 2. The bad \n" +
+                        "\t 3. The ugly");
+        int option = scanner.nextInt();
 
-		return heuristic;
-	}
+        switch (option) {
+
+            case 1:
+                heuristic = new TheGood();
+                break;
+
+            case 2:
+                heuristic = new TheBad();
+                break;
+
+            case 3:
+                heuristic = new TheUgly();
+                break;
+
+            default:
+                heuristic = null;
+                System.out.println("Invalid option");
+                break;
+        }
+
+        return heuristic;
+    }
 }

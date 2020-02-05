@@ -15,15 +15,13 @@ public class TheUgly implements Heuristic {
 		LinkedList<DominoToken> opTokens = state.isPlayer1Turn()? state.getPlayer2() : state.getPlayer1();
 
 		int ownDouble = 0;
-		LinkedList<Move> ownMoves = state.getPossibleMoves(ownTokens);
-		for (Move move : ownMoves)
-			if (move.usedToken.left == move.usedToken.right)
+		for (DominoToken token : ownTokens)
+			if (token.left == token.right)
 				ownDouble++;
 
 		int opDouble = 0;
-		LinkedList<Move> opMoves = state.getPossibleMoves(opTokens);
-		for (Move move : opMoves)
-			if (move.usedToken.left == move.usedToken.right)
+		for (DominoToken token : opTokens)
+			if (token.left == token.right)
 				opDouble++;
 
 		return opDouble - ownDouble;

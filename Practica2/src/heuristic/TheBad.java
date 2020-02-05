@@ -18,9 +18,6 @@ public class TheBad implements Heuristic {
 		// Num of tokens similar to board
 		int posOpT = state.getPossibleMoves(opTokens).size();
 
-		// Num of acumm points
-		int opPoints = state.count(opTokens);
-
-		return 3 * numOpT - 2 * posOpT + opPoints;
+		return numOpT - posOpT / 2f;
 	}
 }
