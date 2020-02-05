@@ -151,6 +151,41 @@ public class State {
 		return possibleMoveList;
 	}
 
+	// This method returns the number of truncated tokens
+	public int getTruncatedTokens(boolean isMyTurn) {
+
+		LinkedList<DominoToken> possibleBoard = new LinkedList<>();
+		LinkedList<DominoToken> playerList;
+		int numTruncTok = 0;
+		int count;
+
+		// Chose player
+		if (isPlayer1Turn && !isMyTurn || !isPlayer1Turn && isMyTurn) playerList = player2;
+		else playerList = player1;
+
+		// Fill possible board list
+		for (DominoToken token : player1) possibleBoard.add(token);
+		for (DominoToken token : player2) possibleBoard.add(token);
+		possibleBoard.add(board);
+
+		for (DominoToken token : playerList) {
+
+			count = 0;
+			possibleBoard.remove(token);
+
+			for (DominoToken board : possibleBoard) {
+				if (token.right == board.right || token.right == board.left || token.left == board.right || token.left == board.left)
+					count++;
+			}
+
+			if (count == 0) numTruncTok++;
+
+			possibleBoard.add(token);
+		}
+
+		return numTruncTok;
+	}
+
 	public DominoToken getBoard() {
 		return board;
 	}
